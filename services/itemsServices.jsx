@@ -14,8 +14,12 @@ export  async function fetchApi() {
     return res.json()
 }
 
+export async function getItems() {
+    const items=await fetchApi()
+    return items
+}
 
 export  async function getSliceItems() {
     const items=await fetchApi()
-    return items.slice(0,3)
+    return items.slice(0,6)
 }

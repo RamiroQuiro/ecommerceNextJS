@@ -16,7 +16,7 @@ export default function RootLayout({
       <head />
       <body className="bg-gray-200 dark:bg-gray-800 w-full mx-auto ">
         <Header />
-    <div class="flex flex-col items-center justify-center md:items-start md:flex-row">
+    <div className="flex flex-col items-center justify-center md:items-start md:flex-row">
         {children}
         </div>
       </body>

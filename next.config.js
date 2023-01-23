@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images:{
-    domains:["www.dropbox.com"]
+    domains:["dropbox.com"]
   },
   experimental:{
     appDir: true
