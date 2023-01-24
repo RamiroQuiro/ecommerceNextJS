@@ -1,45 +1,40 @@
 "use client";
-import {create} from "zustand";
+import { create } from "zustand";
 
-const handleAddItemsToCart = (item, state) => {
-  const temp = [...state.items];
-  const found = temp.find((productos) => productos.id === item.id);
-
-  if (found) {
-    found.qty++;
-  } else {
-    item.qty = 1;
-    temp.push(item);
-  }
-  return temp
- 
+const handleNumberOfItems = (state) => {
+  const total = state.items.reduce((acc, item) => acc + item.qty, 0);
+  return total;
 };
 
-const handleNumberOfItems=(state)=>{
-    // const total = state.tempOrder.reduce((acc,item)=>acc+item.id,0)
-    console.log(state.items)
-    return state.items.length
-}
-
-export const useCarritoCompras = create((set,get) => ({
-  isOpen: true,
+export const useCarritoCompras = create((set, get) => ({
+  isOpen: false,
   items: [],
   addItemtoCart: (item) => {
-  const {items}=get()
+    const { items } = get();
     const temp = items;
-    console.log("items=>",temp)
-    const find=temp.find(producto=>producto.id==item.id)
+    const find = temp.find((producto) => producto.id == item.id);
     if (find) {
       find.qty++;
     } else {
       item.qty = 1;
       temp.push(item);
     }
-    set(state=>({
-      ...state,items:temp
-    }))
+    set((state) => ({
+      ...state,
+      items: temp,
+    }));
   },
-  openCart:"",
+  openCart: () => {
+    const { isOpen } = get();
+    set((state) => ({
+      ...state,
+      isOpen: !isOpen,
+    }));
+  },
   removeItemtoCart: 0,
-  getNumberOfItem:handleNumberOfItems,
+  getNumberOfItem: handleNumberOfItems,
+  getSubtotal: (state)=>{
+    const subtotal=state.items.reduce((acc, item) => acc + item.price,0)
+    return subtotal
+  },
 }));
