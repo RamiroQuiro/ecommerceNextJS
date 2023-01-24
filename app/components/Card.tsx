@@ -31,7 +31,7 @@ export default function Card({opcion}) {
                 <p className="mt-1">${opcion.price}</p>
 
             <ButtonAñadirCarrito
-            id={opcion.id}
+            item={opcion}
             />
               </div>
             </div>

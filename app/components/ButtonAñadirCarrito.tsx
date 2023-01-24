@@ -1,13 +1,18 @@
 "use client"
 
 import { useCarritoCompras } from "../../context/contextStore"
+import {shallow} from "zustand/shallow";
 
-export default function ButtonAñadirCarrito({id}) {
+export default function ButtonAñadirCarrito({item}) {
 
-    const {addItemtoCart}=useCarritoCompras()
+    const {addItemtoCart,openCart}=useCarritoCompras(state=>({
+addItemtoCart:state.addItemtoCart,
+openCart:state.openCart,
+    }),shallow)
+  
   return (
     <button
-    onClick={()=>addItemtoCart(id)}
+     onClick={()=>addItemtoCart(item)}
     className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
     Añadir al Carrito
   </button>
