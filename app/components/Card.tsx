@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
 export default function Card({opcion}) {
+
   return (
     <div className="lg:w-1/4 md:w-1/2 p-4 w-full border bg-gray-50/50" key={opcion.id}>
               <Link className="block relative h-48 rounded overflow-hidden"
@@ -28,9 +30,9 @@ export default function Card({opcion}) {
               <div className="flex items-center justify-around">
                 <p className="mt-1">${opcion.price}</p>
 
-              <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
-                Añadir al Carrito
-              </button>
+            <ButtonAñadirCarrito
+            id={opcion.id}
+            />
               </div>
             </div>
   )

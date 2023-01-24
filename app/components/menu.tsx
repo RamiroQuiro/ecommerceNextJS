@@ -17,6 +17,11 @@ export default function Menu() {
       name: "Store",
       img: "",
     },
+    {
+      link: "./Cart",
+      name: "Cart",
+      img: "",
+    },
   ];
 
   return (
