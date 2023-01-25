@@ -6,6 +6,8 @@ const handleNumberOfItems = (state) => {
   return total;
 };
 
+
+
 export const useCarritoCompras = create((set, get) => ({
   isOpen: false,
   items: [],
@@ -34,7 +36,8 @@ export const useCarritoCompras = create((set, get) => ({
   removeItemtoCart: 0,
   getNumberOfItem: handleNumberOfItems,
   getSubtotal: (state)=>{
-    const subtotal=state.items.reduce((acc, item) => acc + item.price,0)
+
+    const subtotal=state.items.reduce((acc, item) => acc + (item.price*item.qty),0)
     return subtotal
   },
 }));

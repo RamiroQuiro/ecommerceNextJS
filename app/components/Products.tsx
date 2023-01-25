@@ -9,36 +9,35 @@ export default function Products({ item, showAs }) {
   }
   if (showAs === "listItem") {
     return (
-      <div className="border rounded p-2  mx-auto">
-        <div className="lg:w-4/5 mx-auto flex flex-wrap">
+      <div className="border rounded w-full p-2  mx-auto min-h-44">
+        <div className="w-full mx-auto flex flex-wrap items-center justify-between">
           <Image
             width={100}
             height={100}
             alt={item.item}
             src={item.image_url}
-            className="lg:w-1/2 w-full lg:h-auto h-32  object-center rounded"
+            className="lg:w-1/3 object-cover lg:h-auto   object-center rounded"
           />
-          <div className="lg:w-1/2 w-full flex flex-col ">
-            <h2 className="text-sm title-font text-gray-500 tracking-widest">
+          <div className="lg:w-1/2 w-full flex flex-col justify-around text-left ">
+            <h2 className="text-sm title-font tracking-widest">
               {item.category}
             </h2>
-            <h1 className="text-gray-900 text-lg title-font font-medium ">
+            <h1 className="text-gray-900 text-lg  font-medium ">
               {item.item}
             </h1>
           
-            <div className="flex flex-wrap mt-3 items-center pb-5 border-b-2 border-gray-100 ">
-              <div className="flex">
-                <span className="mr-3">Color</span>
-                <button className="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                <button className="border-2 border-gray-300 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button>
+            <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
+              <div className="flex mr-2 items-center justify-center">
+                <span className="mr-1">Color</span>
+                <button className="border border-gray-300 rounded-full w-4 h-4 focus:outline-none"></button>
+                <button className="border border-gray-300 ml-1 bg-gray-700 rounded-full w-4 h-4 focus:outline-none"></button>
+                <button className="border border-gray-300 ml-1 bg-indigo-500 rounded-full w-4 h-4 focus:outline-none"></button>
               </div>
-              <div className="flex my-2 items-center">
-                <span className="mr-3">Size</span>
+              <div className="flex   items-center">
+                <span className="mx-1">Size</span>
                 <div className="relative">
-                  <select className="rounded border appearance-none border-gray-300 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 text-base pl-3 pr-10">
+                  <select className="rounded  border appearance-none border-gray-300 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 pl-1 pr-6">
                     <option>SM</option>
-                    <option>M</option>
                     <option>L</option>
                     <option>XL</option>
                   </select>
@@ -58,10 +57,10 @@ export default function Products({ item, showAs }) {
                 </div>
               </div>
             </div>
-            <div className="flex w-full items-center justify-around">
-              <span>Cantidad {item.qty}</span>
-              <span className="title-font font-medium text-2xl text-gray-900">
-               $ {item.price}
+            <div className="flex w-full items-center justify-between">
+              <span className="font-medium w-full items-center">Cantidad {item.qty}</span>
+              <span className="w-full title-font font-medium text-xl text-gray-900">
+               $ {item.price * item.qty}
               </span>
 
             </div>
@@ -71,7 +70,7 @@ export default function Products({ item, showAs }) {
     );
   }
   return (
-    <section className="text-gray-600 body-font overflow-hidden">
+    <section className="text-gray-600 body-font overflow-hidden bg-gray-50 w-full">
       <div className="container px-5 py-24 mx-auto">
         <div className="lg:w-4/5 mx-auto flex flex-wrap">
           <Image
@@ -86,7 +85,7 @@ export default function Products({ item, showAs }) {
               {item.category}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              The Catcher in the Rye
+              {item.item}
             </h1>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -221,7 +220,7 @@ export default function Products({ item, showAs }) {
             </div>
             <div className="flex">
               <span className="title-font font-medium text-2xl text-gray-900">
-                {item.price}
+                ${item.price}
               </span>
               <ButtonAñadirCarrito item={item} />
               <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
