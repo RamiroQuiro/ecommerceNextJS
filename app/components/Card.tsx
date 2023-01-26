@@ -4,7 +4,7 @@ import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
 export default function Card({opcion}) {
 
   return (
-    <div className="lg:w-[23%] md:w-1/2 p-4 w-full mb-3 border-lg bg-white rounded-lg shadow shadow-gray-300/50 h-[450px]" key={opcion.id}>
+    <div className="lg:w-[23%] md:w-1/2 p-4 w-full mb-3 border-lg bg-white rounded-lg shadow shadow-gray-300/50 h-[450px] hover:-translate-y-1 duration-75 hover:shadow-gray-300"  key={opcion.id}>
               <Link className="block relative h-64  rounded overflow-hidden"
               href={'/store/'+opcion.id}
 
