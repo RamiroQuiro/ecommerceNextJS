@@ -15,9 +15,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="bg-gray-200 dark:bg-gray-800 w-full mx-auto overflow-x-hidden">
+      <body className="bg-gray-100 dark:bg-gray-800 w-full mx-auto overflow-x-hidden">
         <Header />
-    <div className="flex flex-col items-center justify-center md:items-start md:flex-row">
+    <div className="flex flex-col w-full items-center justify-center p-0 md:items-start md:flex-row">
         {children}
         </div>
         <Cart/>

@@ -1,15 +1,17 @@
-import { link } from 'fs';
-import Image from 'next/image'
-import  Link from "next/link";
-
-export default function Home() {
+import Banner from "./components/Banner";
+import CardsHome from "./components/CardsHome";
+import HomePage from "./StorageHomePage";
 
 
+export default async function Home() {
 
   return (
-
-   <div className='flex items-center justify-center mx-auto h-screen'>
-este es la raiz
-   </div>
-  )
+    <section className="text-gray-600 body-font ">
+      <Banner/>
+<CardsHome/>
+    <HomePage
+    key={1}
+    />
+    </section>
+  );
 }

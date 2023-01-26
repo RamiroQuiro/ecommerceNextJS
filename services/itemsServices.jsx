@@ -32,5 +32,5 @@ export async function getSliceItems() {
     element.image_url=element.image_url.replace(reg, "raw=1");
 
   });
-  return items.slice(0, 6);
+  return items.slice(0, 22);
 }
