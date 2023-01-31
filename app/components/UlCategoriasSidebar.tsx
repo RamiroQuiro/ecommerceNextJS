@@ -16,18 +16,10 @@ export default async  function UlCategoriasSidebar({  }) {
       });
       return array;
     };
-  const traerCategoria=(name,data)=>{
-    const array=[data.filter((element=>element.category==name))]
-  console.log(name)
-  return name
-  
-  }
+
+
     const categorias = extraerCategorias(data)
-    const productos= extraerCategorias()
-  
-  const handleAlert=()=>{
-    alert('hola')
-  }
+
   
   return categorias?.map((cat, i) => (
     <ul className="flex flex-col w-10/12 text-gray-500">

@@ -25,14 +25,12 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
           className={`${
             !isOpen
               ? "opacity-0 duration-700"
-              : "opacity-100 duration-700 delay-200 visible flex-col flex"
+              : "opacity-100 duration-700 animate-aparecer delay-200 visible flex-col flex"
           } duration-700`}
         >
-          <ul>
             {arrayProduct?.map((prod, i) => (
-              <ListaProductosCategoriasSidebar prod={prod} />
+              <ListaProductosCategoriasSidebar prod={prod} key={i} />
             ))}
-          </ul>
         </li>
       )}
     </>

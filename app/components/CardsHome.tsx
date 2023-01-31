@@ -13,7 +13,7 @@ const TarjetasColoresHome = ({ className, h2, span, button }) => {
           {button}
         </button>
       </div>
-      <Image />
+      {/* <Image /> */}
     </div>
   );
 };

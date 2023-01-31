@@ -4,10 +4,10 @@ export default function Carts({ isOpen, getSubtotal, items }) {
   return (
     <div
       className={`${
-        isOpen ? "translate-x-[0%]" : "translate-x-[100%]"
-      } top-30 right-0 duration-200 max-w-screen-xl px-4 mx-auto z-20 sm:px-6 lg:px-8`}
+        isOpen ? "translate-x-[0%]" : "animate-aparecer translate-x-[100%]"
+      } top-10 right-0 fixed duration-500 max-w-screen-xl px-4 mx-auto z-20 sm:px-6 lg:px-8`}
     >
-      <div className="w-full mx-auto overflow-hidden rounded-lg shadow-lg pricing-box lg:max-w-none flex flex-col items-center justify-around">
+      <div className="w-full mx-auto overflow-y-scroll rounded-lg shadow-lg pricing-box lg:max-w-none flex flex-col items-center justify-around">
         <div className="px-6 py-8 bg-white w-full flex flex-col items-center gap-2 ">
           {items?.map((product) => (
             <Products showAs={"listItem"} item={product} />

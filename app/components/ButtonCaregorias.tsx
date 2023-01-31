@@ -1,13 +1,13 @@
-export default function ButtonCaregorias({ onClick, imgSrc, name, isOpen }) {
+export default function ButtonCaregorias({ onClick,  name, isOpen }) {
   return (
     <li className="w-full">
       <button
         onClick={onClick}
-        className="py-3 tracking-wide w-full   gap-2 cursor-pointer font-semibold group"
+        className={`${isOpen&& 'text-green-600'} py-3 tracking-wide w-full text-left hover:text-green-600  gap-2 cursor-pointer font-semibold group`}
       >
         <div className="w-full flex items-center justify-between ">
-          <img src={imgSrc} alt="" />
-          <span>{name}</span>
+        <span className="group-hover:animate-waving-hand">👋🏻</span>
+          <span className="text-left w-4/6">{name}</span>
           <svg
             className={
               isOpen ? "rotate-180  duration-150" : "rotate-0 duration-150"
