@@ -11,7 +11,7 @@ export default function Cart() {
 }))
 
   return (
-    <div className={` ${isOpen?"z-10":"-z-10"} absolute top-44 right-0 w-8/12 lg:w-4/12 `}>
+    <div className={` z-10" absolute top-44  right-0 w-8/12 lg:w-4/12 `}>
         <Carts
         items={items}
         isOpen={isOpen}

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
+import ButtonSacarProductCarrito from "./ButtonSacarProductCarrito";
 
 export default function Products({ item, showAs }) {
   if (showAs === "page") {
@@ -9,23 +10,24 @@ export default function Products({ item, showAs }) {
   }
   if (showAs === "listItem") {
     return (
-      <div className="border rounded w-full p-2  mx-auto min-h-44">
+      <div className="border rounded w-full p-1 animate-aparecer  mx-auto overflow-hidden h-40">
+     <ButtonSacarProductCarrito
+     item={item}
+     />
         <div className="w-full mx-auto flex flex-wrap items-center justify-between">
           <Image
-            width={100}
-            height={100}
+            width={30}
+            height={30}
             alt={item.item}
             src={item.image_url}
-            className="lg:w-1/3 object-cover lg:h-auto   object-center rounded"
+            className="lg:w-1/4 object-contain h-32    object-center rounded"
           />
-          <div className="lg:w-1/2 w-full flex flex-col justify-around text-left ">
+          <div className="lg:w-2/3 w-full flex flex-col justify-around text-left ">
             <h2 className="text-sm title-font tracking-widest">
               {item.category}
             </h2>
-            <h1 className="text-gray-900 text-lg  font-medium ">
-              {item.item}
-            </h1>
-          
+            <h1 className="text-gray-900 text-lg  font-medium ">{item.item}</h1>
+
             <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
               <div className="flex mr-2 items-center justify-center">
                 <span className="mr-1">Color</span>
@@ -58,11 +60,12 @@ export default function Products({ item, showAs }) {
               </div>
             </div>
             <div className="flex w-full items-center justify-between">
-              <span className="font-medium w-full items-center">Cantidad {item.qty}</span>
-              <span className="w-full title-font font-medium text-xl text-gray-900">
-               $ {item.price * item.qty}
+              <span className="font-medium w-full items-center">
+                Cantidad {item.qty}
               </span>
-
+              <span className="w-full title-font font-medium text-xl text-gray-900">
+                $ {item.price * item.qty}
+              </span>
             </div>
           </div>
         </div>
