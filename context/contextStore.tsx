@@ -9,6 +9,12 @@ const handleNumberOfItems = (state) => {
 export const useCarritoCompras = create((set, get) => ({
   isOpen: false,
   items: [],
+  cantidadPorItem:(item)=>{
+    const{items}=get()
+    const temp=items
+    let encontrado=temp.find(product=>product.id==item.id)
+  return encontrado?.qty
+  },
   addItemtoCart: (item) => {
     const { items } = get();
     const temp = items;
@@ -33,13 +39,31 @@ export const useCarritoCompras = create((set, get) => ({
   },
   removeItemtoCart: (item) => {
     const { items } = get();
-    let temp = items.filter((product)=>product.id!=item.id)
+    let temp = items.filter((product) => product.id != item.id);
 
-set((state) => ({
-   ...state,
-   items: temp,
- }));
+    set((state) => ({
+      ...state,
+      items: temp,
+    }));
   },
+restarItemCarrito:(item)=>{
+ const {items}=get()
+ let temp=items
+ const find=temp.find(product=>product.id==item.id)
+ if (find.qty>0) {
+  find.qty--;
+ }
+ if (find==0) {
+  temp=temp.filter(product=>product.id!=item.id)
+ }
+
+console.log(temp)
+ set((state)=>({
+  ...state,
+  items:temp
+ }))
+}
+  ,
   getNumberOfItem: handleNumberOfItems,
   getSubtotal: (state) => {
     const subtotal = state.items.reduce(

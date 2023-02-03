@@ -3,17 +3,55 @@ import Link from "next/link";
 import React from "react";
 import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
 import ButtonSacarProductCarrito from "./ButtonSacarProductCarrito";
+import ButtonLike from "../components/Button";
 
 export default function Products({ item, showAs }) {
-  if (showAs === "page") {
-    return <div>page</div>;
+  if (showAs === "card") {
+    return (
+      <div
+        className="lg:w-[23%] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg shadow flex flex-col items-start justify-around shadow-gray-300/50 h-[450px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300"
+        key={item.id}
+      >
+        <Link
+          className="block relative h-64  w-full rounded overflow-hidden"
+          href={"/store/" + item.id}
+        >
+          <Image
+            width={"100"}
+            height="100"
+            alt={item.item}
+            className="object-cover object-center w-full h-full block"
+            src={item.image_url}
+          />
+        </Link>
+        <div className="mt-5 ml-2">
+          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+            <Link
+              className="block relative rounded overflow-hidden"
+              href={"/store/" + item.id}
+            >
+              {" "}
+              {item.category}
+            </Link>
+          </h3>
+          <h2 className="text-gray-900 title-font text-lg font-medium">
+            {item.item}
+          </h2>
+        </div>
+        <div className="flex w-full items-center justify-between px-2">
+          <p className="font-semibold">${item.price}</p>
+          <ButtonLike />
+        </div>
+        <div className="w-11/12 mx-auto flex  items-center my-3  justify-center">
+          <ButtonAñadirCarrito item={item} />
+        </div>
+      </div>
+    );
   }
   if (showAs === "listItem") {
     return (
       <div className="border rounded w-full p-1 animate-aparecer  mx-auto overflow-hidden h-40">
-     <ButtonSacarProductCarrito
-     item={item}
-     />
+        <ButtonSacarProductCarrito item={item} />
         <div className="w-full mx-auto flex flex-wrap items-center justify-between">
           <Image
             width={30}
@@ -226,18 +264,7 @@ export default function Products({ item, showAs }) {
                 ${item.price}
               </span>
               <ButtonAñadirCarrito item={item} />
-              <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                <svg
-                  fill="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  className="w-5 h-5"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                </svg>
-              </button>
+              <ButtonLike />
             </div>
           </div>
         </div>

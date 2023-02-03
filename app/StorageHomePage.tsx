@@ -1,6 +1,6 @@
 import { fetchApi, getSliceItems } from "../services/itemsServices";
-import Card from "./components/Card";
 import CarritoHeader from "./components/CarritoHeader";
+import Products from "./components/Products";
 import SidebarCategoriasStre from "./components/SidebarCategoriasStre";
 export default async function HomePage() {
   const data = await getSliceItems();
@@ -12,7 +12,7 @@ export default async function HomePage() {
       <SidebarCategoriasStre />
       <div className="flex flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-center">
         {data?.map((opcion) => (
-          <Card opcion={opcion} />
+          <Products showAs={"card"} item={opcion} />
         ))}
       </div>
     </div>
