@@ -20,16 +20,16 @@ export default function ButtonAñadirCarrito({ item }) {
   };
 
 const handleRestarItems=()=>{
-
-
+  restarItemCarrito(item)
+  setQtyItems(cantidadPorItem(item));
 }
 
   return (
     <>
       {qtyItems > 0 && (
         <button 
-        onClick={()=>restarItemCarrito(item)}
-        className="w-auto animate-aparecer px-3 py-3 text-xs text-white bg-blue-500 border-0  focus:outline-none  mx-auto items-center hover:bg-blue-600 rounded-l-lg ">
+        onClick={handleRestarItems}
+        className="w-auto animate-[aparecer_0.5s_ease-in-out] px-3 py-3 text-xs text-white bg-blue-500 border-0  focus:outline-none  mx-auto items-center hover:bg-blue-600 rounded-l-lg ">
           <svg
             width="18"
             height="20"
@@ -56,11 +56,17 @@ const handleRestarItems=()=>{
           </svg>
         </button>
       )}
+
+      {qtyItems > 0 ?
+      <span className={`py-2.5 w-4/12 mx-auto text-white border-0 font-medium  focus:outline-none bg-blue-500 text-center `}>{qtyItems  }</span>
+      :
+      null
+    }
       <button
         onClick={handleButton}
-        className={`flex py-3 w-full flex-auto  items-center text-white bg-blue-500 border-0  focus:outline-none hover:bg-blue-600 ${qtyItems<0?"rounded-lg":"rounded-r-lg"}`}
+        className={`flex py-3 w-11/12 flex-auto items-center text-white border-0 font-medium  focus:outline-none hover:bg-blue-600 ${qtyItems>0?"rounded-r-lg bg-blue-500 ":"rounded-lg text-neutral-700  bg-neutral-300  hover:text-white"}`}
       >
-        <span className="text-sm text-center mx-auto">{qtyItems > 0 && qtyItems} Añadir al Carrito</span>
+        <span className="text-sm text-center mx-auto"> Añadir al Carrito</span>
       </button>
       </>
   );

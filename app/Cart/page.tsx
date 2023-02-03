@@ -9,9 +9,8 @@ export default function Cart() {
     items:state.items,
     getSubtotal:state.getSubtotal(state)
 }))
-
-  return (
-    <div className={` z-10" absolute top-44  right-0 w-8/12 lg:w-4/12 `}>
+if (isOpen && items.length) return (
+    <div className={` animate-[aparecer_.3s] z-10 bg-gray-700/40 backdrop-blur-sm fixed w-full h-screen  top-0 left-0  `}>
         <Carts
         items={items}
         isOpen={isOpen}

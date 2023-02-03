@@ -8,11 +8,11 @@ export default function ButtondePagarCarrito({ getSubtotal }) {
     alert('paga meeen')
   }
   return (
-    <div className="px-6 pb-4 bg-white  lg:flex-shrink-1 lg:p-12 w-full">
+    <div className="px-6 pb-2  bg-gray-200  lg:flex-shrink-1 lg:p-12 w-full">
       <button
       onClick={handlePagar}
         type="button"
-        className="py-2 px-4 mt-5 text-center items-center justify-between inline-flex bg-blue-600 hover:bg-blue-700 focus:ring-vlue-500 focus:ring-offset-vlue-200 text-white w-full transition ease-in duration-200 text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+        className="py-2 px-4 mt-2 text-center items-center justify-between inline-flex bg-blue-600 hover:bg-blue-700 focus:ring-vlue-500 focus:ring-offset-vlue-200 text-white w-full transition ease-in duration-200 text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
       >
         <svg
           width="50"

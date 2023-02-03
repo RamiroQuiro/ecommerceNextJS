@@ -7,7 +7,7 @@ const handleNumberOfItems = (state) => {
 };
 
 export const useCarritoCompras = create((set, get) => ({
-  isOpen: false,
+  isOpen:  false,
   items: [],
   cantidadPorItem:(item)=>{
     const{items}=get()
@@ -53,14 +53,12 @@ restarItemCarrito:(item)=>{
  if (find.qty>0) {
   find.qty--;
  }
- if (find==0) {
-  temp=temp.filter(product=>product.id!=item.id)
- }
+
 
 console.log(temp)
  set((state)=>({
   ...state,
-  items:temp
+  items:find.qty>0?temp:temp.filter(product=>product.id!=item.id)
  }))
 }
   ,

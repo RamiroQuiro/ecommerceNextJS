@@ -5,12 +5,12 @@ export default function Carts({ isOpen, getSubtotal, items }) {
   if (getSubtotal > 0)
     return (
       <div
-        className={`${
-          isOpen ? "translate-x-[0%]" : "animate-aparecer translate-x-[100%]"
-        } top-5 right-0 fixed duration-500 max-w-screen-xl px-4 mx-auto z-20 sm:px-6 lg:px-8`}
+        className={`absolute w-4/12 rounded-lg  ${
+          isOpen ? "animate-aparecerCostado"  : "animate-desaparecerCostado delay-150 translate-x-[100%]"
+        } top-5 right-0  duration-500 h-[100%] max-w-screen-xl px-4 mx-auto z-20 sm:px-6 lg:px-8`}
       >
-        <div className="w-full mx-auto rounded-lg shadow-lg lg:max-w-none flex flex-col items-center justify-around">
-          <div className="px-6 py-8 bg-white w-full flex flex-col items-center gap-2 ">
+        <div className="w-full mx-auto relative rounded-lg shadow-lg max-h-[95%] bg-white overflow-hidden flex flex-col items-center justify-between">
+          <div className="px-6 py-8  w-full min-h-full overflow-y-scroll  flex flex-col items-center gap-2 ">
             {items?.map((product) => (
               <Products showAs={"listItem"} item={product} />
             ))}

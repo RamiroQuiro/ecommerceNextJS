@@ -38,7 +38,7 @@ export default function Products({ item, showAs }) {
             {item.item}
           </h2>
         </div>
-        <div className="flex w-full items-center justify-between px-2">
+        <div className="flex w-full items-center justify-between my-2 px-2">
           <p className="font-semibold">${item.price}</p>
           <ButtonLike />
         </div>

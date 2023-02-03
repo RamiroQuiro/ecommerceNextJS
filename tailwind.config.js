@@ -21,11 +21,21 @@ module.exports = {
         aparecer:{
           "0%":{opacity:"0"},
           "100%":{opacity:"1"},
-        }
+        },
+        aparecerCote:{
+          "0%":{transform:"translateX(150%)"},
+          "100%":{transform:"translateX(0%)"},
+        },
+        desaparecerCote:{
+          "0%":{transform:"translateX(0%)"},
+          "100%":{transform:"translateX(150%)"},
+        },
       },
       animation: {
         "waving-hand": "abrirCat 2s linear infinite",
         "aparecer": "aparecer 1s ease-out ",
+        "aparecerCostado": "aparecerCote .3s ease-in ",
+        "desaparecerCostado": "desaparecerCote .3s ease-in ",
       },
 
       colors: {
