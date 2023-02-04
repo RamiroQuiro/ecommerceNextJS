@@ -1,9 +1,27 @@
+"use client"
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import Logo from "../../images/la-esquina.png";
 import CarritoHeader from "./CarritoHeader";
 import Menu from "./menu";
 
 export default function Header() {
+const [scrollTop, setScrollTop] = useState(0)
+useEffect(() => {
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  return () => {
+      window.removeEventListener('scroll', handleScroll);
+}},[])
+const handleScroll = (e) => {
+   const position = window.pageYOffset;
+    console.log(position)
+    setScrollTop(position);
+};
+
+
+
+
   return (
     <header className="text-gray-500 h-20 body-font w-full  bg-white">
       <div className=" my-auto flex h-20 pt-2 px-16 flex-col md:flex-row  justify-around items-center">

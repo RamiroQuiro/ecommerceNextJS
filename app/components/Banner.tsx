@@ -1,6 +1,26 @@
-import React from "react";
+"use client"
+import React, { useEffect, useRef } from "react";
 
 export default function Banner() {
+
+  const referenciaSearch=useRef(null)
+
+  const referencia=()=>{
+    if (!referenciaSearch.current)return
+
+
+    return referenciaSearch.current.getBoundingClientRect()
+  }
+
+  useEffect(()=>{
+window.addEventListener(scroll,()=>{
+  console.log(window.screenTop>450&&alert('ojo'))
+})
+console.log(referencia())
+
+  },[])
+
+
   return (
     <div className="bg-paleta-300/50 w-screen h-[90vh] flex items-center justify-center mx-auto">
       <div className="items-center text-center flex gap-8 -translate-y-7 flex-col ">
@@ -9,7 +29,9 @@ export default function Banner() {
           Get your healthy foods & snacks delivered at your doorsteps all day
           everyday
         </span>
-        <div className="relative bg-white rounded-lg w-full overflow-hidden border-0 shadow-xl shadow-gray-600/30">
+        <div
+        ref={referenciaSearch}
+        className="relative bg-white rounded-lg w-full overflow-hidden border-0 shadow-xl shadow-gray-600/30">
           <input type="search" name="buscar" id="buscar"className=" w-full py-5 top-0 left-0 rounded-lg pl-5 text-gray-600 font-semibold w-full bg-white  border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out" placeholder="Buscar tu producto..." />
           <label
             htmlFor="buscar"
