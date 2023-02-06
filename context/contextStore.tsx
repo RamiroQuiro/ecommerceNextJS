@@ -6,6 +6,8 @@ const handleNumberOfItems = (state) => {
   return total;
 };
 
+
+
 export const useCarritoCompras = create((set, get) => ({
   isOpen:  false,
   items: [],

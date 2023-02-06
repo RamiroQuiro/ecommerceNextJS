@@ -3,7 +3,7 @@ export default function ButtonCaregorias({ onClick,  name, isOpen }) {
     <li className="w-full">
       <button
         onClick={onClick}
-        className={`${isOpen&& 'text-green-600'} py-3 tracking-wide w-full text-left hover:text-green-600  gap-2 cursor-pointer font-semibold group`}
+        className={`${isOpen&& 'text-green-600'} py-3 tracking-wide w-full text-left hover:text-green-600 text-sm gap-2 cursor-pointer font-semibold group`}
       >
         <div className="w-full flex items-center justify-between ">
         <span className="group-hover:animate-waving-hand">👋🏻</span>

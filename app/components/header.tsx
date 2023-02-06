@@ -1,31 +1,35 @@
-"use client"
+"use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Logo from "../../images/la-esquina.png";
-import CarritoHeader from "./CarritoHeader";
+import { useGetBounding } from "../../services/useGetBoundingSearchInput";
+import InputSearch from "./InputSearch";
 import Menu from "./menu";
 
 export default function Header() {
-const [scrollTop, setScrollTop] = useState(0)
-useEffect(() => {
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  const [scrollTop, setScrollTop] = useState(0);
+  // const [referenciaInputSearch, setReferenciaInputSearch] = useState({})
+  // const referenciaInputSearch = useRef();
+  // const referenciaInput = useGetBounding();
 
-  return () => {
-      window.removeEventListener('scroll', handleScroll);
-}},[])
-const handleScroll = (e) => {
-   const position = window.pageYOffset;
-    console.log(position)
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+  }, []);
+  const handleScroll = (e) => {
+    const position = window.pageYOffset;
+    // console.log(referenciaInputSearch);
+    if (position > 328) console.log(position);
     setScrollTop(position);
-};
-
-
-
+  };
 
   return (
-    <header className="text-gray-500 h-20 body-font w-full  bg-white">
-      <div className=" my-auto flex h-20 pt-2 px-16 flex-col md:flex-row  justify-around items-center">
-        <div className="lg:w-2/5 my-auto h-full">
+    <header
+      className={`${
+        scrollTop > 395 && "fixed z-50 animate-[aparecer_0.5s]"
+      } text-gray-500 h-20 body-font w-full  bg-white`}
+    >
+      <div className=" my-auto flex h-20 pt-2 px-16 flex-col md:flex-row  justify-between items-center">
+        <div className="lg:w-2/12 my-auto h-full">
           <Image
             src={Logo}
             width="150"
@@ -33,11 +37,10 @@ const handleScroll = (e) => {
             className="object-cover   bg-green-500 rounded-lg shadow-sm p-3 "
           />
         </div>
+        {scrollTop > 395 && (
+          <InputSearch label={"navBar"}  />
+        )}
         <Menu />
-
-        {/* <div className="lg:w-2/5 inline-flex lg:justify-end ml-5 lg:ml-0">
-          <CarritoHeader />
-        </div> */}
       </div>
     </header>
   );
