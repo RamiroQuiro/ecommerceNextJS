@@ -8,7 +8,7 @@ export default function InputSearch({ label,useRef}) {
     return (
       <div
         ref={useRef}
-        className="relative bg-gray-200 rounded-lg w-5/12 "
+        className="relative bg-gray-200 rounded-full w-5/12 "
       >
         <input
           type="search"
@@ -24,22 +24,22 @@ export default function InputSearch({ label,useRef}) {
     return (
       <div
         ref={useRef}
-        className="relative bg-white rounded-lg w-full overflow-hidden border-0 shadow-xl shadow-gray-600/30"
+        className="relative bg-white rounded-full w-full overflow-hidden border-0 shadow-xl shadow-gray-600/30"
       >
         <input
           type="search"
           name="buscar"
           id="buscar"
-          className=" w-full py-5 top-0 left-0 rounded-lg pl-5 text-gray-600 font-semibold w-full bg-white  border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
+          className=" w-full py-4 top-0 left-0 rounded-lg pl-5 text-gray-600 font-semibold  bg-white  border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
           placeholder="Buscar tu producto..."
         />
         <label
           htmlFor="buscar"
-          className="absolute top-0 right-0 bg-green-500 group text-neutral-100 hover:bg-green-600 duration-150 cursor-pointer font-medium text-xl tracking-wider hover:tracking-widest h-full w-48 text-center flex items-center mx-auto justify-center"
+          className="absolute top-0 right-5 bg-gray-800/90 group text-neutral-100 hover:bg-gray-200 duration-150 cursor-pointer font-medium text-sm tracking-wider hover:tracking-widest h-full p-2 text-center flex flex-col items-center mx-auto justify-center rounded-full"
         >
           <svg
-            width="30"
-            height="30"
+            width="18"
+            height="18"
             viewBox="0 0 24 24"
             fill="none"
             className="mx-3 group-hover:scale-110 duration-300 delay-75"

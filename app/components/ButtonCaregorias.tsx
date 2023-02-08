@@ -6,7 +6,7 @@ export default function ButtonCaregorias({ onClick,  name, isOpen }) {
         className={`${isOpen&& 'text-green-600'} py-3 tracking-wide w-full text-left hover:text-green-600 text-sm gap-2 cursor-pointer font-semibold group`}
       >
         <div className="w-full flex items-center justify-between ">
-        <span className="group-hover:animate-waving-hand">👋🏻</span>
+        <span className="group-hover:animate-waving-hand text-xl">👋🏻</span>
           <span className="text-left w-4/6">{name}</span>
           <svg
             className={

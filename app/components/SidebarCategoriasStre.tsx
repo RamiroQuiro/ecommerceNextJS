@@ -7,7 +7,7 @@ export default async function SidebarCategoriasStre() {
 
 
   return (
-    <div className="w-3/12 min-w-[250px] py-10 pl-10 bg-white  border-2 flex-col flex sticky ">
+    <div className="w-3/12 min-w-[250px] py-10 pl-10 bg-white sticky top-20 h-[97vh]  border-2 flex-col flex ">
      
         
       <UlCategoriasSidebar

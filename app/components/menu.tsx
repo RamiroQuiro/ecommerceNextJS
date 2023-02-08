@@ -30,7 +30,7 @@ export default function Menu() {
   ];
 
   return (
-      <nav className="flex lg:w-4/12 flex-wrap items-center  justify-around text-lg capitalize  tracking-wider font-medium md:ml-auto">
+      <nav className="flex lg:w-4/12 flex-wrap items-center  justify-around text-lg capitalize  tracking-wider font-normal md:ml-auto">
       {" "}
         {links.map((link) => (
           <Link

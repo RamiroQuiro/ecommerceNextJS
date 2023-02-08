@@ -20,7 +20,7 @@ export default function Products({ item, showAs }) {
             width={"100"}
             height="100"
             alt={item.item}
-            className="object-cover object-center w-full h-full block"
+            className="rounded-xl object-center w-full h-auto object-scale-down mx-auto block"
             src={item.image_url}
           />
         </Link>
@@ -259,8 +259,8 @@ export default function Products({ item, showAs }) {
                 </div>
               </div>
             </div>
-            <div className="flex">
-              <span className="title-font font-medium text-2xl text-gray-900">
+            <div className="flex items-center">
+              <span className="title-font font-medium text-2xl mr-5 text-gray-900">
                 ${item.price}
               </span>
               <ButtonAñadirCarrito item={item} />
