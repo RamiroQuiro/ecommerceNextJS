@@ -36,7 +36,7 @@ export default function Menu() {
           <Link
           key={links.indexOf(link)}
             href={link.link}
-            className="mr-5 hover:text-neutral-700 hover:bg-transparent duration-300  "
+            className=" hover:text-sky-700 hover:bg-transparent duration-300  "
           >
             {link.name}
           </Link>

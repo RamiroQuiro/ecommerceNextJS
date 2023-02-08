@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState, useRef } from "react";
-import Logo from "../../images/la-esquina.png";
+import { useEffect, useState } from "react";
+import Logo from "../../images/logoCarpinteria.png";
 import { useGetBounding } from "../../services/useGetBoundingSearchInput";
 import InputSearch from "./InputSearch";
 import Menu from "./menu";
@@ -26,16 +26,17 @@ export default function Header() {
     <header
       className={`${
         scrollTop > 395 && "fixed z-50 animate-[aparecer_0.5s]"
-      } text-gray-500 h-20 body-font w-full  bg-white`}
+      } text-gray-500 h-[70px] body-font w-full m-auto bg-white`}
     >
-      <div className=" my-auto flex h-20 pt-2 px-16 flex-col md:flex-row  justify-between items-center">
-        <div className="lg:w-2/12 my-auto h-full">
+      <div className=" my-auto flex h-16 pt-1 px-16 flex-col md:flex-row  justify-between items-center">
+        <div className="w-3/12 flex my-auto h-full items-center gap-2 ">
           <Image
             src={Logo}
             width="150"
             height={"150"}
-            className="object-cover   bg-green-500 rounded-lg shadow-sm p-3 "
+            className="object-cover  rounded-lg shadow-sm "
           />
+          <h2 className=" text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-800">DesignSoft</h2>
         </div>
         {scrollTop > 395 && (
           <InputSearch label={"navBar"}  />

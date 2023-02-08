@@ -9,18 +9,18 @@ export default function Products({ item, showAs }) {
   if (showAs === "card") {
     return (
       <div
-        className="lg:w-[23%] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg shadow flex flex-col items-start justify-around shadow-gray-300/50 h-[450px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300"
+        className="lg:w-[23%] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg shadow flex flex-col items-start justify-around shadow-gray-300/50 h-[420px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300"
         key={item.id}
       >
         <Link
-          className="block relative h-64  w-full rounded overflow-hidden"
+          className="block relative h-64  w-full rounded mt-5 overflow-hidden"
           href={"/store/" + item.id}
         >
           <Image
             width={"100"}
             height="100"
-            alt={item.item}
-            className="rounded-xl object-center w-full h-auto object-scale-down mx-auto block"
+            alt={item.title}
+            className="rounded-xl object-center  w-10/12 h-4/6 object-contain m-auto block"
             src={item.image_url}
           />
         </Link>
@@ -35,7 +35,7 @@ export default function Products({ item, showAs }) {
             </Link>
           </h3>
           <h2 className="text-gray-900 title-font text-lg font-medium">
-            {item.item}
+            {item.title}
           </h2>
         </div>
         <div className="flex w-full items-center justify-between my-2 px-2">

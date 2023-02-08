@@ -8,13 +8,13 @@ export default function InputSearch({ label,useRef}) {
     return (
       <div
         ref={useRef}
-        className="relative bg-gray-200 rounded-full w-5/12 "
+        className="bg-gray-200 rounded-full w-4/12 "
       >
         <input
           type="search"
           name="buscar"
           id="buscar"
-          className=" w-full py-3 top-0 left-0 rounded-lg px-5 text-gray-600 font-semibold  bg-gray-200   border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
+          className="w-full py-3  px-5 text-gray-600 font-semibold    border-gray-300 bg-gray-200 rounded-full focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
           placeholder="Buscar tu producto..."
         />
       </div>
@@ -24,18 +24,18 @@ export default function InputSearch({ label,useRef}) {
     return (
       <div
         ref={useRef}
-        className="relative bg-white rounded-full w-full overflow-hidden border-0 shadow-xl shadow-gray-600/30"
+        className="relative bg-white rounded-full w-full overflow-hidden border-0  shadow-gray-600/30"
       >
         <input
           type="search"
           name="buscar"
           id="buscar"
-          className=" w-full py-4 top-0 left-0 rounded-lg pl-5 text-gray-600 font-semibold  bg-white  border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
+          className=" w-full py-4 top-0 left-0 px-5 text-gray-600 font-semibold  bg-white rounded-full border border-gray-300 focus:border-yellow-500 focus:ring-2  outline-none transition-colors duration-200 ease-in-out"
           placeholder="Buscar tu producto..."
         />
         <label
           htmlFor="buscar"
-          className="absolute top-0 right-5 bg-gray-800/90 group text-neutral-100 hover:bg-gray-200 duration-150 cursor-pointer font-medium text-sm tracking-wider hover:tracking-widest h-full p-2 text-center flex flex-col items-center mx-auto justify-center rounded-full"
+          className="absolute top-0 right-5 bg-gray-800/90 group text-neutral-100 hover:bg-sky-800 duration-150 cursor-pointer font-medium text-sm tracking-wider hover:tracking-widest h-full p-2 text-center flex flex-col items-center mx-auto justify-center rounded-full"
         >
           <svg
             width="18"
