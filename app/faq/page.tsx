@@ -6,7 +6,7 @@ export default async function Faq() {
 
 
   const preguntando=await fetchGoogle()
-const datos=preguntando.data
+const datos=preguntando
   return (
     <div>
         <h1>FAQ</h1>

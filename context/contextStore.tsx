@@ -52,12 +52,10 @@ restarItemCarrito:(item)=>{
  const {items}=get()
  let temp=items
  const find=temp.find(product=>product.id==item.id)
+ 
  if (find.qty>0) {
   find.qty--;
  }
-
-
-console.log(temp)
  set((state)=>({
   ...state,
   items:find.qty>0?temp:temp.filter(product=>product.id!=item.id)

@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains:["www.dropbox.com","lh3.googleusercontent.com"],
+    domains:["www.dropbox.com","lh3.googleusercontent.com","drive.google.com"],
     remotePatterns: [
       {
         protocol: 'https',
