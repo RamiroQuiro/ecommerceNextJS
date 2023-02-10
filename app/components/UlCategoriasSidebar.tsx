@@ -1,13 +1,14 @@
+import { fetchGoogle } from "../../services/fetchGoogleSheet";
 import { getItems } from "../../services/itemsServices";
 import ItemsCategorias from "./ItemsCategorias";
 export default async  function UlCategoriasSidebar({  }) {
 
 
-    const data = await getItems();
+    const data = await fetchGoogle();
 
     const extraerCategorias = () => {
       const array = [];
-      data.filter((item) => {
+      data?.data.filter((item) => {
         const find = array.find((prod) => prod == item.category);
         if (find) return;
         else {
@@ -18,12 +19,12 @@ export default async  function UlCategoriasSidebar({  }) {
     };
 
 
-    const categorias = extraerCategorias(data)
+    const categorias = extraerCategorias(data?.data)
 
   
   return categorias?.map((cat, i) => (
     <ul className="flex flex-col w-10/12 text-gray-500">
-      <ItemsCategorias name={cat} key={i} imgSrc={""} data={data}  />
+      <ItemsCategorias name={cat} key={i} imgSrc={""} data={data?.data} />
     </ul>
   ));
 }

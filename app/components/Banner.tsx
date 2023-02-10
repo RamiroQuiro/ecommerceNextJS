@@ -17,7 +17,7 @@ export default function Banner() {
         
         />      
       </div>
-      <div className="w-full h-full top-0 left-0 z-10 absolute bg-gradient-to-b from-neutral-100/40 via-neutral-100/60 to-white backdrop-blur-[2px]"></div>
+      <div className="w-full h-full top-0 left-0 z-10 absolute bg-gradient-to-b from-neutral-100/30 via-neutral-100/50 to-white backdrop-blur-[2px]"></div>
       <Image
       src={BannerImg}
       width="100vw"

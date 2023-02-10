@@ -7,15 +7,20 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
   const [isOpen, setIsOpen] = useState(false);
   const [arrayProduct, setArrayProduct] = useState([]);
 
-  const handleAbrirCategorias = (name) => {
-    const temp = [data?.filter((prod) => prod.category == name)];
+  const handleAbrirCategorias = (name, array) => {
+    const temp = [];
+    array.forEach((prod) => {
+      if (temp.includes(prod.subcategory)) return;
+      if (prod.category == name) temp.push(prod.subcategory);
+    });
     setArrayProduct(temp);
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       <ButtonCaregorias
-        onClick={() => handleAbrirCategorias(name)}
+        onClick={() => handleAbrirCategorias(name, data)}
         imgSrc={imgSrc}
         name={name}
         isOpen={isOpen}
@@ -28,9 +33,9 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
               : "opacity-100 duration-700 animate-aparecer delay-200 visible flex-col flex"
           } duration-700`}
         >
-            {arrayProduct?.map((prod, i) => (
-              <ListaProductosCategoriasSidebar prod={prod} key={i} />
-            ))}
+          {arrayProduct?.map((prod, i) => (
+            <ListaProductosCategoriasSidebar prod={prod} key={i} />
+          ))}
         </li>
       )}
     </>

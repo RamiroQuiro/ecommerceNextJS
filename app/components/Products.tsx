@@ -13,14 +13,14 @@ export default function Products({ item, showAs }) {
         key={item.id}
       >
         <Link
-          className="block relative h-64  w-full rounded mt-5 overflow-hidden"
+          className="block relative h-5/6  w-full rounded mt-5 overflow-hidden"
           href={"/store/" + item.id}
         >
           <Image
             width={"100"}
             height="100"
             alt={item.title}
-            className="rounded-xl object-center  w-10/12 h-4/6 object-contain m-auto block"
+            className="rounded-xl object-center  w-10/12 h-4/6 object-cover m-auto block"
             src={item.image_url}
           />
         </Link>
@@ -34,9 +34,11 @@ export default function Products({ item, showAs }) {
               {item.category}
             </Link>
           </h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">
+          <Link 
+           href={"/store/" + item.id}
+          className="text-gray-900 title-font text-lg font-medium hover:underline cursor-pointer">
             {item.title}
-          </h2>
+            </Link>
         </div>
         <div className="flex w-full items-center justify-between my-2 px-2">
           <p className="font-semibold">${item.price}</p>
@@ -56,7 +58,7 @@ export default function Products({ item, showAs }) {
           <Image
             width={30}
             height={30}
-            alt={item.item}
+            alt={item.title}
             src={item.image_url}
             className="lg:w-1/4 object-contain h-32    object-center rounded"
           />
@@ -64,7 +66,7 @@ export default function Products({ item, showAs }) {
             <h2 className="text-sm title-font tracking-widest">
               {item.category}
             </h2>
-            <h1 className="text-gray-900 text-lg  font-medium ">{item.item}</h1>
+            <h1 className="text-gray-900 text-lg  font-medium ">{item.title}</h1>
 
             <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
               <div className="flex mr-2 items-center justify-center">
@@ -117,7 +119,7 @@ export default function Products({ item, showAs }) {
           <Image
             width={500}
             height={500}
-            alt={item.item}
+            alt={item.title}
             src={item.image_url}
             className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded"
           />
@@ -126,7 +128,7 @@ export default function Products({ item, showAs }) {
               {item.category}
             </h2>
             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-              {item.item}
+              {item.title}
             </h1>
             <div className="flex mb-4">
               <span className="flex items-center">
@@ -226,7 +228,7 @@ export default function Products({ item, showAs }) {
                 </a>
               </span>
             </div>
-            <p className="leading-relaxed">{item.description}</p>
+            <p className="leading-relaxed">{item.descripcion}</p>
             <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
               <div className="flex">
                 <span className="mr-3">Color</span>
