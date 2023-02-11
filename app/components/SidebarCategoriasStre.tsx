@@ -1,6 +1,4 @@
 
-import { getItems } from "../../services/itemsServices";
-import ItemsCategorias from "./ItemsCategorias";
 import UlCategoriasSidebar from "./UlCategoriasSidebar";
 
 export default async function SidebarCategoriasStre() {

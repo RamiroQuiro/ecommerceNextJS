@@ -9,7 +9,7 @@ export default function Products({ item, showAs }) {
   if (showAs === "card") {
     return (
       <div
-        className="lg:w-[23%] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg shadow flex flex-col items-start justify-around shadow-gray-300/50 h-[420px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300"
+        className="lg:w-[260px] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg shadow flex flex-col   items-start justify-around shadow-gray-300/50 h-[420px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300 animate-[aparecer_.35s]"
         key={item.id}
       >
         <Link
