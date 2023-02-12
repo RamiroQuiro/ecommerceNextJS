@@ -18,24 +18,36 @@ module.exports = {
           "60%": { transform: "rotate(0.0deg)" },
           "100%": { transform: "rotate(0.0deg)" },
         },
-        aparecer:{
-          "0%":{opacity:"0"},
-          "100%":{opacity:"1"},
+        sliceDown: {
+          "0%": { maxHeight: "300px",opacity:"1" },
+          "100%": { maxHeight: "0px",opacity:"0" },
         },
-        aparecerCote:{
-          "0%":{transform:"translateX(150%)"},
-          "100%":{transform:"translateX(0%)"},
+        sliceUp: {
+          "0%": { maxHeight: "0px", opacity: "0" },
+          "100%": { maxHeight: "300px", opacity: "1" },
         },
-        desaparecerCote:{
-          "0%":{transform:"translateX(0%)"},
-          "100%":{transform:"translateX(150%)"},
+        aparecer: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        desaparecer: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        aparecerCote: {
+          "0%": { transform: "translateX(150%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        desaparecerCote: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(150%)" },
         },
       },
       animation: {
         "waving-hand": "abrirCat 2s linear infinite",
-        "aparecer": "aparecer 1s ease-out ",
-        "aparecerCostado": "aparecerCote .3s ease-in ",
-        "desaparecerCostado": "desaparecerCote .3s ease-in ",
+        aparecer: "aparecer 1s ease-out ",
+        aparecerCostado: "aparecerCote .3s ease-in ",
+        desaparecerCostado: "desaparecerCote .3s ease-in ",
       },
 
       colors: {

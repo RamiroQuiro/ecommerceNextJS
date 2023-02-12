@@ -42,12 +42,12 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
         <li
           className={`${
             !isOpen
-              ? "opacity-0 duration-700"
-              : "opacity-100 duration-700 animate-aparecer delay-200 visible flex-col flex"
+              ? "opacity-0 duration-700 animate-[sliceDown_.8s_ease-in] "
+              : "opacity-100 duration-700  animate-[sliceUp_.8s_ease-in]  flex-col flex"
           } duration-700`}
         >
           {arrayProduct?.map((prod, i) => (
-            <ListaProductosCategoriasSidebar prod={prod} key={i} handleSelectSubCategory={handleSelectSubCategory}/>
+            <ListaProductosCategoriasSidebar prod={prod} key={i} isOpen={isOpen} handleSelectSubCategory={handleSelectSubCategory}/>
           ))}
         </li>
       )}
