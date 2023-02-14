@@ -1,9 +1,9 @@
 import { fetchGoogle } from "../../services/fetchGoogleSheet";
 import ItemsCategorias from "./ItemsCategorias";
-export default async  function UlCategoriasSidebar({  }) {
+export default async  function UlCategoriasSidebar({data}) {
 
 
-    const data = await fetchGoogle();
+   
 
     const extraerCategorias = () => {
       const array = [];

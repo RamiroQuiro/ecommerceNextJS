@@ -11,11 +11,11 @@ export default async function HomePage() {
   const data = await fetchGoogle();
   
   return (
-    <div className="flex items-stretch relative justify-around mx-auto">
+    <div className="flex md:flex-row flex-col items-stretch relative justify-around mx-auto">
       <div className="fixed bottom-2 z-50 ">
         <CarritoHeader />
       </div>
-      <SidebarCategoriasStre />
+      <SidebarCategoriasStre data={data} key={1}/>
       <TiendadelHome
       data={data}
       key={2}

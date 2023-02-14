@@ -11,7 +11,7 @@ export default function TiendadelHome({ data }) {
   }));
 
   return (
-    <div className="flex flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-start">
+    <div className="flex w-full flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-start">
       {data?.data
         ?.filter((prod) => {
           if (filterCategory == "all") return prod;

@@ -2,11 +2,7 @@ import Link from "next/link";
 
 export default function Menu() {
   const links = [
-    // {
-    //   link: "./",
-    //   name: "home",
-    //   img: "",
-    // },
+
     {
       link: "./store",
       name: "Store",
@@ -26,7 +22,7 @@ export default function Menu() {
   ];
 
   return (
-    <nav className="flex lg:w-4/12 flex-wrap items-center  justify-around text-lg capitalize  tracking-wider font-normal md:ml-auto">
+    <nav className="flex lg:w-4/12 w-full flex-wrap items-center  justify-around text-lg capitalize  tracking-wider font-normal md:ml-auto">
       {" "}
       {links.map((link) => (
         <Link

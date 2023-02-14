@@ -25,12 +25,12 @@ export default function Header() {
     <header
       className={`${
         scrollTop > 395 && "fixed z-50 animate-[aparecer_0.5s]"
-      } text-gray-500 h-[70px] body-font w-full m-auto bg-white`}
+      } text-gray-500 md:h-[70px] py-5 md:py-0 body-font w-full m-auto bg-white`}
     >
-      <div className=" my-auto flex h-16 pt-1 px-16 flex-col md:flex-row  justify-between items-center">
+      <div className=" my-auto flex h-16 pt-1 px-16 flex-col md:flex-row  justify-center md:justify-between items-center">
         <Link 
         href={'/'}
-        className="w-3/12 flex my-auto h-full items-center gap-2 ">
+        className="md:w-3/12 w-5/12 flex mx-auto h-full items-center gap-2 ">
           <Image
             src={Logo}
             width="150"
@@ -40,7 +40,7 @@ export default function Header() {
           <h2 className=" text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-800">DesignSoft</h2>
         </Link>
         {scrollTop > 395 && (
-          <InputSearch label={"navBar"}  />
+          <InputSearch label={"navBar"}   />
         )}
         <Menu />
       </div>

@@ -2,7 +2,7 @@ import "../styles/globals.css";
 import Cart from "./Cart/page";
 import Header from "./components/header";
 import ReactQueryWrapper from "./ReactQueryWrapper";
-
+import Foteer from "./Footer/Foteer";
 export default function RootLayout({
   children,
 }: {
@@ -21,6 +21,7 @@ export default function RootLayout({
               <ReactQueryWrapper>{children}</ReactQueryWrapper>
         </div>
         <Cart />
+        <Foteer/>
       </body>
     </html>
   );

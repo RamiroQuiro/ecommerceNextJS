@@ -4,9 +4,9 @@ import Slider from "react-slick";
 const TarjetasColoresHome = ({ className, h2, span, button }) => {
   return (
     <div
-      className={`${className}  w-5/12 h-52 pl-10 rounded-lg `}
+      className={`${className}  w-5/12 md:h-52 h-0 pl-10 rounded-lg md:block hidden `}
     >
-      <div className="flex flex-col gap-3 items-start justify-center text-white h-full">
+      <div className="md:flex flex-col gap-3 items-start justify-center text-white h-full  hidden ">
         <h2 className="text-2xl font-bold tracking-wider">{h2}</h2>
         <span className="font-medium">{span}</span>
         <button className="rounded-2xl hover:-translate-y-1 hover:shadow-lg duration-100 py-2 px-3 bg-white text-gray-700 text-xs tracking-wider shadow-md font-medium ">

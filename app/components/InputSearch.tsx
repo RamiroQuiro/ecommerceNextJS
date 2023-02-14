@@ -8,7 +8,7 @@ export default function InputSearch({ label,useRef}) {
     return (
       <div
         ref={useRef}
-        className="bg-gray-200 rounded-full w-4/12 "
+        className="bg-gray-200 rounded-full hidden md:block md:w-4/12 "
       >
         <input
           type="search"

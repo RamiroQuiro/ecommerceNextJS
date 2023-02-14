@@ -4,6 +4,7 @@ import { create } from "zustand";
 export const useFilterProduct = create((set, get) => ({
     filterCategory: "all",
     filterSubCategory:"all",
+    filterProduct:"",
   inputSearch: (name) => {
     set((state) => ({
       ...state,
