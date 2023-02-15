@@ -1,7 +1,7 @@
 import ButtondePagarCarrito from "./ButtondePagarCarrito";
 import Products from "./Products";
 
-export default function Carts({ isOpen, getSubtotal, items }) {
+export default function Carts({ isOpen, getSubtotal, items }:any) {
   if (getSubtotal > 0)
     return (
       <div

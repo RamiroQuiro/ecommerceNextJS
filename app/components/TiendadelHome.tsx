@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import { useFilterProduct } from "../../context/filter";
 import Products from "./Products";
 
@@ -22,7 +21,7 @@ export default function TiendadelHome({ data }) {
             return  subCat.subcategory == filterSubCategory;
         })
         .map((opcion) => (
-          <Products showAs={"card"} item={opcion} />
+          <Products showAs={"card"} item={opcion} key={opcion?.id}/>
         ))}
     </div>
   );

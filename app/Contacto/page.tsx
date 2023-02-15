@@ -5,7 +5,11 @@ export default function Cotacto() {
     <section className="text-neutral-600 body-font w-full relative ">
       <div className="relative w-10/12 px-5 py-5 mx-auto flex sm:flex-nowrap flex-wrap h-[120vh]">
         <div className=" absolute lg:w-full hidden md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-3 md:flex items-end justify-start ">
-          <Image src={contacto} />
+          <Image src={contacto}
+          width={"100"}
+          height={"100"}
+          alt="contacto"
+          />
         </div>
         <div className=" md:absolute right-3 top-28 rounded-lg lg:w-1/3 md:w-1/2 bg-white/90 backdrop-blur-sm flex flex-col md:ml-auto w-full p-5 mt-8 md:mt-0">
           <h2 className=" text-2xl mb-1 font-medium title-font">

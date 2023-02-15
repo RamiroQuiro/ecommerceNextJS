@@ -1,10 +1,10 @@
 "use client"
 import { useCarritoCompras } from '../../context/contextStore';
-import Carts from "../components/Cart";
+import Carts from "../components/cart";
 
 export default function Cart() {
 
-  const {isOpen,getSubtotal,items}=useCarritoCompras(state=>({
+  const {isOpen,getSubtotal,items}=useCarritoCompras((state:any)=>({
     isOpen:state.isOpen,
     items:state.items,
     getSubtotal:state.getSubtotal(state)

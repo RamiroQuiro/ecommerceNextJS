@@ -22,7 +22,7 @@ export default function Banner() {
       src={BannerImg}
       width="100vw"
       height={"100vh"}
-      alt="Forum"
+      alt="banner"
       className="absolute w-full h-full object-cover top-0 left-0 saturate-75"
       />
     </div>

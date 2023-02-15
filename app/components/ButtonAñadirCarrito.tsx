@@ -40,18 +40,18 @@ const handleRestarItems=()=>{
             <path
               d="M16 2H8C4 2 2 4 2 8V21C2 21.55 2.45 22 3 22H16C20 22 22 20 22 16V8C22 4 20 2 16 2Z"
               stroke="#f1f2f3"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               opacity="1"
               d="M8.5 12H15.5"
               stroke="#f1f2f3"
-              stroke-width="1.8"
+              strokeWidth="1.8"
               stroke-miterlimit="10"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
