@@ -12,7 +12,7 @@ export default function Carts({ isOpen, getSubtotal, items }:any) {
         <div className="w-full mx-auto mt-16 relative rounded-lg shadow-lg max-h-[95%] bg-white overflow-hidden flex flex-col items-center justify-between">
           <div className="px-6 py-8  w-full min-h-full overflow-y-scroll  flex flex-col items-center gap-2 ">
             {items?.map((product) => (
-              <Products showAs={"listItem"} item={product} />
+              <Products showAs={"listItem"} item={product} key={product.id} />
             ))}
           </div>
         <ButtondePagarCarrito

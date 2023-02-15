@@ -49,7 +49,7 @@ const handleRestarItems=()=>{
               d="M8.5 12H15.5"
               stroke="#f1f2f3"
               strokeWidth="1.8"
-              stroke-miterlimit="10"
+              strokeMiterlimit="10"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

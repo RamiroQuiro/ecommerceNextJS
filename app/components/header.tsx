@@ -33,6 +33,7 @@ export default function Header() {
         className="md:w-3/12 w-5/12 flex mx-auto h-full items-center gap-2 ">
           <Image
             src={Logo}
+            alt="logo"
             width="150"
             height={"150"}
             className="object-cover  rounded-lg shadow-sm "
