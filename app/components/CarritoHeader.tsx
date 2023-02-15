@@ -2,8 +2,6 @@
 
 import { useCarritoCompras } from "../../context/contextStore";
 import { shallow } from "zustand/shallow";
-import cartSVG from "../../images/shoppingsvg.svg";
-import Image from "next/image";
 
 export default function CarritoHeader() {
   const { items, isOpen, getNumberOfItem, openCart, getSubtotal } =
@@ -22,14 +20,15 @@ export default function CarritoHeader() {
     return (
       <div
         onClick={openCart}
-        className="flex w-64 animate-aparecer cursor-pointer items-center text-white bg-paleta-200/90
-         border-0 py-2 px-3 focus:outline-none hover:bg-paleta-300 hover:scale-105 duration-300 rounded-xl shadow-lg font-bold text-base mt-4 md:mt-0"
+        className="flex w-64 animate-[aparecerDeAbajo_.5s] cursor-pointer items-center text-neutral-700 font-semibold bg-gray-50/95
+         border p-2 focus:outline-none group hover:bg-paleta-200 hover:scale-105 duration-300 rounded-3xl shadow-lg  text-base mt-4 md:mt-0"
       >
-        <div className="w-1/2 inline-flex items-center justify-center gap-2">
+        <div className="w-1/2   inline-flex items-center justify-center gap-2">
           <svg
-            fill="#FFF"
-            height="30"
-            width="30"
+          className="group-hover:fill-neutral-100"
+            fill={`${isOpen ? "#f1f2f3" : "#717885"}`}
+            height="20"
+            width="20"
             version="1.1"
             id="Layer_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +52,7 @@ export default function CarritoHeader() {
               />
             </g>
           </svg>
-          {getNumberOfItem} Items
+          <span className="text-neutral-600 group-hover:text-neutral-100">{getNumberOfItem} Items</span>
         </div>
         <div className="w-1/3 bg-white rounded-lg text-neutral-600 items-center text-center justify-center px-2 py-1">
           ${getSubtotal}

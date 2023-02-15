@@ -55,7 +55,7 @@ export default function ButtondePagarCarrito({ getSubtotal }) {
             d="M9 19C9 19.75 8.79 20.46 8.42 21.06C8.21 21.42 7.94 21.74 7.63 22C6.93 22.63 6.01 23 5 23C3.54 23 2.27 22.22 1.58 21.06C1.21 20.46 1 19.75 1 19C1 17.74 1.58 16.61 2.5 15.88C3.19 15.33 4.06 15 5 15C7.21 15 9 16.79 9 19Z"
             stroke="#29ff32"
             strokeWidth="1.5"
-            stroke-miterlimit="10"
+            strokeMiterlimit="10"
             strokeLinecap="round"
             strokeLinejoin="round"
           />

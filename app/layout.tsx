@@ -1,8 +1,8 @@
 import "../styles/globals.css";
-import Cart from "./cart/page";
 import Header from "./components/header";
 import ReactQueryWrapper from "./ReactQueryWrapper";
 import Foteer from "./Footer/Foteer";
+import Cart from "./cart/page";
 export default function RootLayout({
   children,
 }: {
@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className="flex flex-col w-full items-center justify-center p-0 md:items-start md:flex-row">
               <ReactQueryWrapper>{children}</ReactQueryWrapper>
         </div>
-        <Cart />
+        <Cart/>
         <Foteer/>
       </body>
     </html>

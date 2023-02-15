@@ -27,7 +27,7 @@ export default function Header() {
         scrollTop > 395 && "fixed z-50 animate-[aparecer_0.5s]"
       } text-gray-500 md:h-[70px] py-5 md:py-0 body-font w-full m-auto bg-white`}
     >
-      <div className=" my-auto flex h-16 pt-1 px-16 flex-col md:flex-row  justify-center md:justify-between items-center">
+      <div className=" my-auto flex h-16 pt-1 px-16 flex-col md:flex-row  justify-center lg:justify-between md:justify-between items-center">
         <Link 
         href={'/'}
         className="md:w-3/12 w-5/12 flex mx-auto h-full items-center gap-2 ">

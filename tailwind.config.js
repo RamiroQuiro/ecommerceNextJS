@@ -30,6 +30,11 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        
+        aparecerDeAbajo: {
+          "0%": { opacity: "0",transform:"translateY(50%)" },
+          "100%": { opacity: "1",transform:"translateY(0%) "},
+        },
         desaparecer: {
           "0%": { opacity: "1" },
           "100%": { opacity: "0" },

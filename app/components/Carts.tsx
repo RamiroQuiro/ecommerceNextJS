@@ -1,7 +1,15 @@
 import ButtondePagarCarrito from "./ButtondePagarCarrito";
 import Products from "./Products";
+import { interfaceItem } from "../../app/types/tyoes";
 
-export default function Carts({ isOpen, getSubtotal, items }:any) {
+// interface Typynes{
+//   isOpen:boolean,
+//   getSubtotal:number,
+//   items:[],
+// }
+
+export default function Carts({ isOpen, getSubtotal, items }) {
+  console.log(items)
   if (getSubtotal > 0)
     return (
       <div

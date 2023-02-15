@@ -3,8 +3,11 @@
 import { useCarritoCompras } from "../../context/contextStore";
 import { shallow } from "zustand/shallow";
 import { useState } from "react";
+import { interfaceItem } from "../../app/types/tyoes";
 
-export default function ButtonAñadirCarrito({ item }) {
+
+
+export default function ButtonAñadirCarrito({ item }:interfaceItem) {
   const { addItemtoCart, cantidadPorItem ,restarItemCarrito} = useCarritoCompras(
     (state) => ({
       addItemtoCart: state.addItemtoCart,
@@ -20,6 +23,7 @@ export default function ButtonAñadirCarrito({ item }) {
   };
 
 const handleRestarItems=()=>{
+  console.log('anda?',item)
   restarItemCarrito(item)
   setQtyItems(cantidadPorItem(item));
 }

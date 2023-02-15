@@ -1,6 +1,6 @@
 "use client"
 import { useCarritoCompras } from '../../context/contextStore';
-import Carts from "../components/Cart";
+import Carts from '../components/Carts';
 
 export default function Cart() {
 
@@ -12,10 +12,11 @@ export default function Cart() {
 if (isOpen && items.length) return (
     <div className={` animate-[aparecer_.3s] z-10 bg-gray-700/40 backdrop-blur-sm fixed w-full h-screen  top-0 left-0  `}>
         <Carts
-        items={items}
-        isOpen={isOpen}
-        getSubtotal={getSubtotal}
+                items={items}
+         isOpen={isOpen}
+         getSubtotal={getSubtotal}
         />
+       
     </div>
   )
 }

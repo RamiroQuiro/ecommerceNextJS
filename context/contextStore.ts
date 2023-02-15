@@ -1,14 +1,26 @@
 "use client";
 import { create } from "zustand";
 
-const handleNumberOfItems = (state) => {
+const handleNumberOfItems = (state:EstadoCarrito) => {
   const total = state.items.reduce((acc, item) => acc + item.qty, 0);
   return total;
 };
 
+import { interfaceItem } from "../app/types/tyoes";
 
+interface EstadoCarrito {
+  isOpen:boolean,
+  items:[],
+  cantidadPorItem:(item:interfaceItem)=>void,
+  addItemtoCart:(item:interfaceItem)=>void,
+  openCart:()=>void,
+  removeItemtoCart:(item:interfaceItem)=>void,
+  restarItemCarrito:(item:interfaceItem)=>void,
+  getNumberOfItem:()=>void,
+  getSubtotal:(item:EstadoCarrito)=>void,
+}
 
-export const useCarritoCompras = create((set, get) => ({
+export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
   isOpen:  false,
   items: [],
   cantidadPorItem:(item)=>{
@@ -52,7 +64,8 @@ restarItemCarrito:(item)=>{
  const {items}=get()
  let temp=items
  const find=temp.find(product=>product.id==item.id)
- if(find.qty==0)
+
+ if(find.qty!=0)
  if (find.qty>0) {
   find.qty--;
  }
