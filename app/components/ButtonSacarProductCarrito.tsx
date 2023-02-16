@@ -10,13 +10,13 @@ const {removeItemtoCart}=useCarritoCompras(state=>({
   return (
     <button 
     onClick={() => removeItemtoCart(item)}
-    className="absolute right-[80px] rotate-45 "
+    className="absolute bg-gray-100 p-1 rounded-full right-3 w-8 h-8 rotate-45 "
     
     >
     <svg
-      width="30"
-      height="30"
-      viewBox="0 0 24 24"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

@@ -1,4 +1,5 @@
 "use client";
+import { useCarritoCompras } from "../../context/contextStore";
 import { useFilterProduct } from "../../context/filter";
 import Products from "./Products";
 
@@ -8,7 +9,9 @@ export default function TiendadelHome({ data }) {
     filterCategory: state.filterCategory,
     filterSubCategory: state.filterSubCategory,
   }));
-
+const {items}=useCarritoCompras((state) => ({
+  items: state.items,
+}));
   return (
     <div className="flex w-full flex-wrap gap-1 mx-auto py-10 px-5 justify-around items-start">
       {data?.data

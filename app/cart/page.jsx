@@ -4,13 +4,13 @@ import Carts from '../components/Carts';
 
 export default function Cart() {
 
-  const {isOpen,getSubtotal,items}=useCarritoCompras((state:any)=>({
+  const {isOpen,getSubtotal,items}=useCarritoCompras((state)=>({
     isOpen:state.isOpen,
     items:state.items,
     getSubtotal:state.getSubtotal(state)
 }))
 if (isOpen && items.length) return (
-    <div className={` animate-[aparecer_.3s] z-10 bg-gray-700/40 backdrop-blur-sm fixed w-full h-screen  top-0 left-0  `}>
+    <div className={` animate-[aparecer_.3s] z-[50] bg-gray-700/40 backdrop-blur-sm fixed w-full h-screen  top-0 left-0  `}>
         <Carts
                 items={items}
          isOpen={isOpen}

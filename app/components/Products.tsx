@@ -9,7 +9,7 @@ export default function Products({ item, showAs }) {
   if (showAs === "card") {
     return (
       <div
-        className="lg:w-[260px] md:w-1/2 p-2 w-full mb-3 border-lg bg-white rounded-lg md:shadow flex flex-col   items-start justify-around shadow-gray-300/50 h-[420px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300 animate-[aparecer_.5s]"
+        className="lg:w-[260px] md:w-1/2 py-3 px-4 w-full mb-3 border-lg bg-white rounded-lg md:shadow flex flex-col   items-start justify-around shadow-gray-300/50 h-[420px] hover:-translate-y-0.5 duration-150 hover:shadow-gray-300 animate-[aparecer_.5s]"
         key={item.id}
       >
         <Link
@@ -52,23 +52,23 @@ export default function Products({ item, showAs }) {
   }
   if (showAs === "listItem") {
     return (
-      <div className="border rounded w-full p-1 animate-aparecer  mx-auto overflow-hidden h-40">
+      <div className="border flex justify-between gap-5 relative rounded w-full p-1 animate-aparecer  mx-auto  md:h-32">
         <ButtonSacarProductCarrito item={item} />
-        <div className="w-full mx-auto flex flex-wrap items-center justify-between">
           <Image
             width={30}
             height={30}
             alt={item.title}
             src={item.image_url}
-            className="lg:w-1/4 object-contain h-32    object-center rounded"
+            className="md:w-1/4 w-1/2 object-cover md:h-32 py-2 object-center rounded-lg"
           />
-          <div className="lg:w-2/3 w-full flex flex-col justify-around text-left ">
-            <h2 className="text-sm title-font tracking-widest">
+        <div className="w-full mx-auto h-full flex flex-col items-stretch justify-between">
+    
+            <h2 className="md:text-sm text-xs title-font tracking-widest">
               {item.category}
             </h2>
-            <h1 className="text-gray-900 text-lg  font-medium ">{item.title}</h1>
+            <h1 className="text-neutral-700 md:text-lg text-sm font-medium ">{item.title}</h1>
 
-            <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
+            {/* <div className="flex  w-full my-1 pb-2 text-sm items-center  border-b-2 border-gray-200 ">
               <div className="flex mr-2 items-center justify-center">
                 <span className="mr-1">Color</span>
                 <button className="border border-gray-300 rounded-full w-4 h-4 focus:outline-none"></button>
@@ -98,15 +98,14 @@ export default function Products({ item, showAs }) {
                   </span>
                 </div>
               </div>
-            </div>
-            <div className="flex w-full items-center justify-between">
-              <span className="font-medium w-full items-center">
+            </div> */}
+            <div className="flex w-full items-center justify-around border-t-2 py-1">
+              <span className="font-medium w-full items-center md:text-base text-sm">
                 Cantidad {item.qty}
               </span>
-              <span className="w-full title-font font-medium text-xl text-gray-900">
+              <span className="w-full title-font font-medium md:text-xl text-gray-900">
                 $ {item.price * item.qty}
               </span>
-            </div>
           </div>
         </div>
       </div>

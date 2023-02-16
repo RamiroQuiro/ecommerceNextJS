@@ -20,7 +20,7 @@ const TarjetasColoresHome = ({ className, h2, span, button }) => {
 
 export default function CardsHome() {
   return (
-    <div className="flex h-72 items-center gap-5 justify-between w-full px-10 py-5 mx-auto bg-white">
+    <div className="flex h-0 md:h-72 items-center gap-5 justify-between w-full px-10 py-5 mx-auto bg-white">
 
       <TarjetasColoresHome
         h2={"Express Delivery"}

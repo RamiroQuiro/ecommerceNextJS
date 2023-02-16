@@ -30,7 +30,10 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        
+        hoverFilter:{
+          "0%": { Height: "50px", },
+          "100%": { Height: "auto",},
+        },
         aparecerDeAbajo: {
           "0%": { opacity: "0",transform:"translateY(50%)" },
           "100%": { opacity: "1",transform:"translateY(0%) "},

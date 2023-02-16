@@ -15,20 +15,20 @@ export default function Menu() {
     },
 
     {
-      link: "./Contacto",
+      link: "./contacto",
       name: "Contacto",
       img: "",
     },
   ];
 
   return (
-    <nav className="flex lg:w-4/12 w-full flex-wrap items-center  justify-around text-lg capitalize  tracking-wider font-normal md:ml-auto">
+    <nav className="flex md:w-4/12  lg:w-4/12 w-full md:mr-10 flex-wrap items-center  justify-between text-lg capitalize  tracking-wider font-normal md:ml-auto">
       {" "}
       {links.map((link) => (
         <Link
           key={links.indexOf(link)}
           href={link.link}
-          className=" hover:text-sky-700 hover:bg-transparent duration-300  "
+          className=" hover:text-sky-700 text-center  hover:bg-transparent duration-300  "
         >
           {link.name}
         </Link>

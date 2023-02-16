@@ -1,13 +1,16 @@
 "use client";
 
-export default function InputSearch({ label,useRef}) {
+
+interface Props {
+label:string
+}
+export default function InputSearch({ label}:Props) {
 
  
 
   if (label == "navBar")
     return (
       <div
-        ref={useRef}
         className="bg-gray-200 rounded-full hidden md:block md:w-4/12 "
       >
         <input
@@ -23,7 +26,6 @@ export default function InputSearch({ label,useRef}) {
   if (label == "banner")
     return (
       <div
-        ref={useRef}
         className="relative bg-white rounded-full w-full overflow-hidden border-0  shadow-gray-600/30"
       >
         <input

@@ -13,12 +13,12 @@ export default function Carts({ isOpen, getSubtotal, items }) {
   if (getSubtotal > 0)
     return (
       <div
-        className={`absolute w-4/12 rounded-lg  ${
+        className={`absolute md:w-4/12 w-full h-[100vh]  rounded-lg block ${
           isOpen ? "animate-aparecerCostado"  : "animate-desaparecerCostado delay-150 translate-x-[100%]"
-        } top-5 right-0  duration-500 h-[100%] max-w-screen-xl px-4 mx-auto z-30 sm:px-6 lg:px-8`}
+        } top-5 right-0  duration-500  max-w-screen-xl px-2 mx-auto  sm:px-6 lg:px-8`}
       >
-        <div className="w-full mx-auto mt-16 relative rounded-lg shadow-lg max-h-[95%] bg-white overflow-hidden flex flex-col items-center justify-between">
-          <div className="px-6 py-8  w-full min-h-full overflow-y-scroll  flex flex-col items-center gap-2 ">
+        <div className="w-full mx-auto md:mt-2 relative  rounded-lg shadow-lg md:max-h-[95vh]  h-[90vh] md:h-auto z-[70] bg-white  flex flex-col items-center justify-between">
+          <div className="md:px-6 px-2 py-8  w-full h-[80vh] overflow-y-auto   flex flex-col items-center gap-2 ">
             {items?.map((product) => (
               <Products showAs={"listItem"} item={product} key={product.id} />
             ))}

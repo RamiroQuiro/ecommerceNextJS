@@ -21,11 +21,11 @@ export default function CarritoHeader() {
       <div
         onClick={openCart}
         className="flex w-64 animate-[aparecerDeAbajo_.5s] cursor-pointer items-center text-neutral-700 font-semibold bg-gray-50/95
-         border p-2 focus:outline-none group hover:bg-paleta-200 hover:scale-105 duration-300 rounded-3xl shadow-lg  text-base mt-4 md:mt-0"
+         border p-2 focus:outline-none group hover:bg-paleta-200 hover:scale-105 duration-300 rounded-3xl shadow-lg z-50 text-base mt-4 md:mt-0"
       >
         <div className="w-1/2   inline-flex items-center justify-center gap-2">
           <svg
-          className="group-hover:fill-neutral-100"
+            className="group-hover:fill-neutral-100"
             fill={`${isOpen ? "#f1f2f3" : "#717885"}`}
             height="20"
             width="20"
@@ -52,7 +52,9 @@ export default function CarritoHeader() {
               />
             </g>
           </svg>
-          <span className="text-neutral-600 group-hover:text-neutral-100">{getNumberOfItem} Items</span>
+          <span className="text-neutral-600 group-hover:text-neutral-100">
+            {getNumberOfItem} Items
+          </span>
         </div>
         <div className="w-1/3 bg-white rounded-lg text-neutral-600 items-center text-center justify-center px-2 py-1">
           ${getSubtotal}

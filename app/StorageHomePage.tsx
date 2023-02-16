@@ -12,10 +12,10 @@ export default async function HomePage() {
   
   return (
     <div className="flex md:flex-row flex-col items-stretch relative justify-around mx-auto">
-      <div className="fixed bottom-4 z-50 ">
+      <div className="fixed bottom-4 z-[60] left-[15vw] md:left-auto ">
         <CarritoHeader />
       </div>
-      <SidebarCategoriasStre data={data} key={1}/>
+      <SidebarCategoriasStre data={data?.data} key={1}/>
       <TiendadelHome
       data={data}
       key={2}

@@ -26,7 +26,7 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
 
 
   
-  const handleSelectSubCategory=(name)=>{
+  const handleSelectSubCategory=(name:string)=>{
   inputSearchSubCategory(name)
   }
 

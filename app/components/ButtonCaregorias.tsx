@@ -1,6 +1,6 @@
 export default function ButtonCaregorias({ onClick,  name, isOpen }) {
   return (
-    <li className="w-full">
+    <li className="w-full flex-auto">
       <button
         onClick={onClick}
         className={`${isOpen&& 'text-green-600'} py-3 tracking-wide w-full text-left hover:text-green-600 text-sm gap-2 cursor-pointer font-semibold group`}

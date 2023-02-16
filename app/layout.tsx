@@ -1,6 +1,5 @@
 import "../styles/globals.css";
 import Header from "./components/header";
-import ReactQueryWrapper from "./ReactQueryWrapper";
 import Foteer from "./Footer/Foteer";
 import Cart from "./cart/page";
 export default function RootLayout({
@@ -20,10 +19,10 @@ export default function RootLayout({
        className="bg-gray-100 dark:bg-gray-800 w-full mx-auto overflow-x-hidden">
         <Header />
         <div className="flex flex-col w-full items-center justify-center p-0 md:items-start md:flex-row">
-              <ReactQueryWrapper>{children}</ReactQueryWrapper>
+              {children}
         </div>
-        <Cart/>
         <Foteer/>
+        <Cart/>
       </body>
     </html>
   );
