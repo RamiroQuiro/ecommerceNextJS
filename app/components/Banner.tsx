@@ -20,8 +20,8 @@ export default function Banner() {
       <div className="w-full md:h-full h-1/2 top-0 left-0 z-10 absolute bg-gradient-to-b from-neutral-100/30 via-neutral-100/50 to-white backdrop-blur-[2px]"></div>
       <Image
       src={BannerImg}
-      width="100vw"
-      height={"100vh"}
+      width="100"
+      height={"100"}
       alt="banner"
       className="absolute w-full h-full object-cover top-0 left-0 saturate-75"
       />
