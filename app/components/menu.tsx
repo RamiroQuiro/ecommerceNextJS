@@ -5,12 +5,12 @@ export default function Menu() {
 
     {
       link: "./store",
-      name: "Store",
+      name: "Ofertas",
       img: "",
     },
     {
       link: "./faq",
-      name: "FAQ",
+      name: "Preguntas",
       img: "",
     },
 
@@ -22,7 +22,7 @@ export default function Menu() {
   ];
 
   return (
-    <nav className="flex md:w-4/12  lg:w-4/12 w-full md:mr-10 flex-wrap items-center  justify-between text-lg capitalize  tracking-wider font-normal md:ml-auto">
+    <nav className="flex md:w-4/12  lg:w-4/12 w-full md:mr-10 flex-wrap items-center gap-x-5 text-sm md:gap-0 justify-between md:text-lg capitalize  tracking-wider font-normal md:ml-auto">
       {" "}
       {links.map((link) => (
         <Link

@@ -2,6 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../images/logoCarpinteria.png";
 export default function Foteer() {
+
+
+
+  
   return (
     <footer className="text-neutral-600 bg-white body-font ">
       <div className=" px-5 py-16 mx-auto flex md:items-center md:w-10/12 lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">

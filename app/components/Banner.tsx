@@ -23,7 +23,7 @@ export default function Banner() {
       width="100"
       height={"100"}
       alt="banner"
-      className="absolute w-full h-full object-cover top-0 left-0 saturate-75"
+      className="absolute w-full h-full object-cover top-0 left-0 aspect-square saturate-75"
       />
     </div>
   );
