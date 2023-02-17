@@ -1,12 +1,10 @@
 import ItemsCategorias from "./ItemsCategorias";
-export default async  function UlCategoriasSidebar({data}:any) :Promise<JSX.Element[]> {
+import {interfaceItem}from '../types/tyoes'
+export default   function UlCategoriasSidebar({data}:any)  {
 
-
-   
-
-    const extraerCategorias = () => {
+    const extraerCategorias = (data:any[]) => {
       const array:any[] = [];
-      data?.filter((item) => {
+      data?.filter((item:interfaceItem) => {
         const find = array.find((prod) => prod == item.category);
         if (find) return;
         else {
@@ -16,13 +14,19 @@ export default async  function UlCategoriasSidebar({data}:any) :Promise<JSX.Elem
       return array;
     };
 
+    const categorias:any[] = extraerCategorias(data)
 
-    const categorias = extraerCategorias(data)
 
-
-  return categorias?.map((cat, i) => (
+    return (
+      <>
+      {
+        categorias?.map((cat,i)=>(
     <ul className="flex flex-col w-10/12  text-gray-500">
       <ItemsCategorias name={cat} key={i} imgSrc={""} data={data} />
     </ul>
-  ));
+
+        ))
+      }
+    </>
+  );
 }

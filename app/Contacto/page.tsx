@@ -6,8 +6,8 @@ export default function Cotacto() {
       <div className="relative w-10/12 px-5 py-5 mx-auto flex sm:flex-nowrap flex-wrap h-[120vh]">
         <div className=" absolute lg:w-full hidden md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-3 md:flex items-end justify-start ">
           <Image src={contacto}
-          width={"100vw"}
-          height={"100vh"}
+          width={"100"}
+          height={"100"}
           alt="contacto"
           />
         </div>
