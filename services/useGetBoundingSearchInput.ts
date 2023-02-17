@@ -1,5 +1,5 @@
 
-  export function useGetBounding(referencia) {
+  export function useGetBounding(referencia:any) {
 
     if (!referencia) return;
 
