@@ -1,7 +1,9 @@
 "use client"
+interface Props{
+  getSubtotal:number
+}
 
-
-export default function ButtondePagarCarrito({ getSubtotal }) {
+export default function ButtondePagarCarrito({ getSubtotal }:Props) {
 
   const handlePagar=()=>{
     alert('paga meeen')

@@ -73,7 +73,7 @@ export default async function Store() {
             <div
               className="absolute inset-0 flex flex-col items-start justify-end p-6"
             >
-                 <h2 className=" text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-800">Juego de mesa tipo industrial</h3>
+                 <h2 className=" text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r to-orange-600 from-orange-800">Juego de mesa tipo industrial</h2>
   
               <span
                 className="mt-1.5 inline-block bg-black px-5 py-3 text-xs font-medium uppercase tracking-wide text-white"

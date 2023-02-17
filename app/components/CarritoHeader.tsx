@@ -16,7 +16,7 @@ export default function CarritoHeader() {
       shallow
     );
 
-  if (getNumberOfItem > 0)
+  if (items.length > 0)
     return (
       <div
         onClick={openCart}

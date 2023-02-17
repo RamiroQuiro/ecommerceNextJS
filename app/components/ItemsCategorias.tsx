@@ -4,7 +4,13 @@ import { useFilterProduct } from "../../context/filter";
 import ButtonCaregorias from "./ButtonCaregorias";
 import ListaProductosCategoriasSidebar from "./ListaProductosCategoriasSidebar";
 
-export default function ItemsCategorias({ name, imgSrc, data }) {
+interface Props{
+  name:string,
+  imgSrc:string,
+  data:[]
+}
+
+export default function ItemsCategorias({ name, imgSrc, data }:Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [arrayProduct, setArrayProduct] = useState([]);
   const {inputSearh,inputSearchSubCategory}=useFilterProduct((state)=>({
@@ -12,10 +18,14 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
     inputSearchSubCategory:state.inputSearchSubCategory
   }))
 
+  interface Propss{
+    category:string,
+    subcategory:string,
+  }
 
-  const handleAbrirCategorias = (name, array) => {
-    const temp = [];
-    array.forEach((prod) => {
+  const handleAbrirCategorias = (name:string, array:[]) => {
+    const temp:any = [];
+    array.forEach((prod:Propss) => {
       if (temp.includes(prod.subcategory)) return;
       if (prod.category == name) temp.push(prod.subcategory);
     });
@@ -34,7 +44,6 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
     <>
       <ButtonCaregorias
         onClick={() => handleAbrirCategorias(name, data)}
-        imgSrc={imgSrc}
         name={name}
         isOpen={isOpen}
       />
@@ -47,7 +56,7 @@ export default function ItemsCategorias({ name, imgSrc, data }) {
           } duration-700`}
         >
           {arrayProduct?.map((prod, i) => (
-            <ListaProductosCategoriasSidebar prod={prod} key={i} isOpen={isOpen} handleSelectSubCategory={handleSelectSubCategory}/>
+            <ListaProductosCategoriasSidebar prod={prod} key={i}  handleSelectSubCategory={handleSelectSubCategory}/>
           ))}
         </li>
       )}

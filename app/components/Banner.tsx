@@ -1,5 +1,5 @@
 import Image from "next/image";
-import InputSearch from "./InputSearch";
+import InputSearch from "./inputSearch";
 import BannerImg from "../../images/banner.jpg";
 export default function Banner() {
 

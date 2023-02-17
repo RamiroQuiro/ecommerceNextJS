@@ -1,11 +1,11 @@
 import ItemsCategorias from "./ItemsCategorias";
-export default async  function UlCategoriasSidebar({data}) {
+export default async  function UlCategoriasSidebar({data}:any) :Promise<JSX.Element[]> {
 
 
    
 
     const extraerCategorias = () => {
-      const array = [];
+      const array:any[] = [];
       data?.filter((item) => {
         const find = array.find((prod) => prod == item.category);
         if (find) return;

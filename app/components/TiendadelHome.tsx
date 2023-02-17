@@ -5,7 +5,8 @@ import Products from "./Products";
 
 export default function TiendadelHome({ data }) {
   // const [consulta,setConsulta]=useState<string>("all")
-  const { filterCategory, filterSubCategory } = useFilterProduct((state) => ({
+  const { filterCategory, filterSubCategory,filterSearch } = useFilterProduct((state) => ({
+    filterSearch:state.filterSearch,
     filterCategory: state.filterCategory,
     filterSubCategory: state.filterSubCategory,
   }));

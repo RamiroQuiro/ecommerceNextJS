@@ -1,4 +1,11 @@
-export default function ButtonCaregorias({ onClick,  name, isOpen }) {
+
+interface Props{
+  onClick:()=>void,
+  name:string,
+  isOpen:boolean
+}
+
+export default function ButtonCaregorias({ onClick,  name, isOpen }:Props) {
   return (
     <li className="w-full flex-auto">
       <button

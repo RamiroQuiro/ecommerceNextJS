@@ -1,7 +1,12 @@
 "use clinet"
-import {Component} from "react";
-import Slider from "react-slick";
-const TarjetasColoresHome = ({ className, h2, span, button }) => {
+
+interface Props{
+  className:string,
+  h2:string,
+  span:string,
+  button:string
+}
+const TarjetasColoresHome = ({ className, h2, span, button }:Props) => {
   return (
     <div
       className={`${className}  w-5/12 md:h-52 h-0 pl-10 rounded-lg md:block hidden `}

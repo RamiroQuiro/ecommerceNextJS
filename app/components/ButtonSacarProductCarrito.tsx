@@ -2,7 +2,7 @@
 
 import { useCarritoCompras } from "../../context/contextStore"
 
-export default function ButtonSacarProductCarrito({item}) {
+export default function ButtonSacarProductCarrito({item}:any) {
 
 const {removeItemtoCart}=useCarritoCompras(state=>({
     removeItemtoCart:state.removeItemtoCart

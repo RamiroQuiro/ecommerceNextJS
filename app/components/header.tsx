@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Logo from "../../images/logoCarpinteria.png";
-import InputSearch from "./InputSearch";
+import InputSearch from "./inputSearch";
 import Menu from "./menu";
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
   }, []);
-  const handleScroll = (e) => {
+  const handleScroll = () => {
     setScrollTop(0)
     const position = window.pageYOffset;
     if (position > 328) 

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 
-export default function ListaProductosCategoriasSidebar({prod,handleSelectSubCategory}) {
+export default function ListaProductosCategoriasSidebar({prod,handleSelectSubCategory}:any) {
 
 
   return (

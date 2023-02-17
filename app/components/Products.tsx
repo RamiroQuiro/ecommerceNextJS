@@ -4,8 +4,13 @@ import React from "react";
 import ButtonAñadirCarrito from "./ButtonAñadirCarrito";
 import ButtonSacarProductCarrito from "./ButtonSacarProductCarrito";
 import ButtonLike from "../components/Button";
+import { interfaceItem } from "../types/tyoes";
+interface Props {
+  item:interfaceItem,
+  showAs:string,
+}
 
-export default function Products({ item, showAs }) {
+export default function Products({ item, showAs }:Props) {
   if (showAs === "card") {
     return (
       <div

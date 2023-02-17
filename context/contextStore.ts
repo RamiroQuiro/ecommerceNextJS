@@ -7,14 +7,15 @@ import { interfaceItem } from "../app/types/tyoes";
 interface EstadoCarrito {
   isOpen:boolean,
   items:[],
-  cantidadPorItem:(item:interfaceItem)=>void,
-  addItemtoCart:(item:interfaceItem)=>void,
-  openCart:()=>void,
-  removeItemtoCart:(item:interfaceItem)=>void,
-  restarItemCarrito:(item:interfaceItem)=>void,
-  getNumberOfItem:(state:EstadoCarrito)=>void,
-  getSubtotal:(state:EstadoCarrito)=>void,
+  cantidadPorItem:(item:interfaceItem)=>number,
+  addItemtoCart:(item:interfaceItem)=>number,
+  openCart:()=>boolean,
+  removeItemtoCart:(item:interfaceItem)=>number,
+  restarItemCarrito:(item:interfaceItem)=>number,
+  getNumberOfItem:(state:EstadoCarrito)=>number,
+  getSubtotal:(state:EstadoCarrito)=>number,
 }
+
 
 export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
   isOpen:  false,
@@ -22,7 +23,7 @@ export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
   cantidadPorItem:(item)=>{
     const{items}=get()
     const temp=items
-    let encontrado=temp.find(product=>product.id==item.id)
+    let encontrado=temp.find((product)=>product.id==item.id)
   return encontrado?.qty
   },
   addItemtoCart: (item) => {
