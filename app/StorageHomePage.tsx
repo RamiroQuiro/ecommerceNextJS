@@ -6,10 +6,12 @@ import TiendadelHome from "./components/TiendadelHome";
 
 
 
-export default async function HomePage() {
+export default async function HomePage():any {
 
   const data = await fetchGoogle();
-  
+  if(!data) return(
+    <span>esperar men...</span>
+  )
   return (
     <div className="flex md:flex-row flex-col items-stretch relative justify-around mx-auto">
       <div className="fixed bottom-4 z-[60] left-[15vw] md:left-auto ">

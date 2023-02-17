@@ -9,7 +9,6 @@ interface Typynes{
 }
 
 export default function Carts({ isOpen, getSubtotal, items }:Typynes) {
-  console.log(items)
   if (getSubtotal > 0)
     return (
       <div
@@ -29,4 +28,8 @@ export default function Carts({ isOpen, getSubtotal, items }:Typynes) {
         </div>
       </div>
     );
+    return(
+      <span>cargando...</span>
+
+    )
 }

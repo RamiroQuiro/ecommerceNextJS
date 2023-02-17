@@ -1,5 +1,8 @@
+interface Props{
+  
+}
 
-const ItemsFaq=({svg,h3,span})=>(
+const ItemsFaq=({svg,h3,span}:any)=>(
   
   <div className="h-3/5 px-4 border-l-2 border-orange-700 flex  gap-4 items-center justify-between ">
  {svg}

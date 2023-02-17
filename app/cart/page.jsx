@@ -19,4 +19,7 @@ if (isOpen && items.length) return (
        
     </div>
   )
+  return (
+    <span>Cargando...</span>
+  )
 }

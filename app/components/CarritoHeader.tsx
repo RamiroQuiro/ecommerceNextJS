@@ -72,4 +72,7 @@ export default function CarritoHeader() {
         </svg>
       </div>
     );
+    return (
+      <span>cargando..</span>
+    )
 }
