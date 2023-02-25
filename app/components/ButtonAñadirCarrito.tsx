@@ -5,21 +5,21 @@ import { shallow } from "zustand/shallow";
 import { useState } from "react";
 import { interfaceItem } from "../../app/types/tyoes";
 
-export interface Props{
-  imaImageURLCrudo:string,
-  Imagen:string,
-  category:string,
-  descripcion:string,
-  id:string,
-  imagen_url:string,
-  price:string,
- stock:string,
- subcategory:string,
- title:string, 
-}
+// export interface Props{
+//   imaImageURLCrudo:string,
+//   Imagen:string,
+//   category:string,
+//   descripcion:string,
+//   id:string,
+//   imagen_url:string,
+//   price:string,
+//  stock:string,
+//  subcategory:string,
+//  title:string, 
+// }
 
 
-export default function ButtonAñadirCarrito({ item }:any) {
+export default function ButtonAñadirCarrito({ item }) {
   const { addItemtoCart, cantidadPorItem ,restarItemCarrito} = useCarritoCompras(
     (state) => ({
       addItemtoCart: state.addItemtoCart,
@@ -29,15 +29,15 @@ export default function ButtonAñadirCarrito({ item }:any) {
     shallow
   );
   const [qtyItems, setQtyItems] = useState(0);
-  const handleButton = (item:any) => {
+  const handleButton = () => {
     addItemtoCart(item);
-    // setQtyItems(cantidadPorItem(item));
+    setQtyItems(cantidadPorItem(item));
   };
 
 const handleRestarItems=()=>{
   console.log('anda?',item)
   restarItemCarrito(item)
-  // setQtyItems(cantidadPorItem(item));
+setQtyItems(cantidadPorItem(item));
 }
 
   return (

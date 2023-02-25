@@ -11,10 +11,12 @@ export default function CarritoHeader() {
         openCart: state.openCart,
         getNumberOfItem: state.getNumberOfItem(state),
         isOpen: state.isOpen,
-        getSubtotal: state.getSubtotal(state),
+        getSubtotal: state.getSubtotal(),
       }),
       shallow
     );
+console.log(items.length)
+
 
   if (items.length > 0)
     return (
@@ -72,7 +74,4 @@ export default function CarritoHeader() {
         </svg>
       </div>
     );
-    return (
-      <span>cargando..</span>
-    )
 }

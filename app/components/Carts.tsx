@@ -8,7 +8,7 @@ interface Typynes{
   items:[],
 }
 
-export default function Carts({ isOpen, getSubtotal, items }:Typynes) {
+export default function Carts({ isOpen, getSubtotal, items }) {
   if (getSubtotal > 0)
     return (
       <div

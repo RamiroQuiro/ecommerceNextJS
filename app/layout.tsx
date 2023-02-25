@@ -16,7 +16,7 @@ export default function RootLayout({
       <head />
       <body
       cz-shortcut-listen="true"
-       className="bg-gray-100 dark:bg-gray-800 w-full mx-auto overflow-x-hidden">
+       className="bg-gray-100  w-full mx-auto overflow-x-hidden">
         <Header />
         <div className="flex flex-col w-full items-center justify-center p-0 md:items-start md:flex-row">
               {children}

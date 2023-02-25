@@ -12,31 +12,32 @@ interface EstadoCarrito {
   removeItemtoCart: (item: interfaceItem) => void;
   restarItemCarrito: (item: interfaceItem) => void;
   getNumberOfItem: (state: EstadoCarrito) => number;
-  getSubtotal: (state: EstadoCarrito) => number;
+  getSubtotal: (state: EstadoCarrito) => any;
 }
 
-export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
+export const useCarritoCompras = create((set, get) => ({
   isOpen: false,
   items: [],
   cantidadPorItem: (item) => {
     const { items } = get();
     const temp = items;
-    const encontrado:any = temp.find(
-      (product: interfaceItem) => product.id == item.id
+    const encontrado = temp.find(
+      (product) => product.id == item.id
     );
     return encontrado.qty
   },
   addItemtoCart: (item) => {
     const { items } = get();
-    const temp:any[] = items;
-    const find:any  = temp.find( (product: interfaceItem)  => product.id == item.id)
+    const temp = items;
+    const find  = temp.find( (product)  => product.id == item.id)
+
     if (find) {
       find.qty++
     } else {
       item.qty = 1;
       temp.push(item);
     }
-    set((state:any) => ({
+    set((state) => ({
       ...state,
       items: temp,
     }));
@@ -50,9 +51,9 @@ export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
   },
   removeItemtoCart: (item) => {
     const { items } = get();
-    let temp = items.filter((product:interfaceItem) => product.id != item.id);
+    let temp = items.filter((product) => product.id != item.id);
 
-    set((state:any) => ({
+    set((state) => ({
       ...state,
       items: temp,
     }));
@@ -60,25 +61,24 @@ export const useCarritoCompras = create<EstadoCarrito>((set, get) => ({
   restarItemCarrito: (item) => {
     const { items } = get();
     let temp = items;
-    const find:any = temp.find((product:interfaceItem) => product.id == item.id);
-
-    if (find?.qty != 0)
-      if (find?.qty > 0) {
+    const find= temp.find((product) => product.id == item.id);
+      if (find.qty > 0) {
         find.qty--;
-      }
-    set((state:any) => ({
+      }else{
+    set((state) => ({
       ...state,
       items:
-        find.qty > 0 ? temp : temp.filter((product:interfaceItem) => product.id != item.id),
-    }));
+        find.qty > 0 ? temp : temp.filter((product) => product.id != item.id),
+    }))}
   },
-  getNumberOfItem: (state: EstadoCarrito) => {
-    const total = state.items.reduce((acc, item:interfaceItem) => acc + item.qty, 0);
+  getNumberOfItem: (state) => {
+    const total = state.items.reduce((acc, item) => acc + item.qty, 0);
     return total;
   },
   getSubtotal: (state) => {
-    const subtotal = state.items.reduce(
-      (acc, item:interfaceItem) => acc + item.price * item.qty,
+    const { items } = get();
+    const subtotal =items.reduce(
+      (acc, item) => acc + item.price * item.qty,
       0
     );
     return subtotal;
